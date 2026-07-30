@@ -4,8 +4,6 @@
 
 ```json
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "MobilePhone",
   "type": "object",
   "properties": {
     "model": {
@@ -37,5 +35,5 @@
 
 ## 2. Models Used
 
-* **Primary Model:** `groq/compound`
-* **Fallback Model:** `qwen/qwen3.6-27b`
+* **Primary Model:** `gemini-3.5-flash-lite`
+* **Fallback Model:** `gemini-3.6-flash`
