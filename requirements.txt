@@ -2,6 +2,5 @@ fastapi
 uvicorn
 guardrails-ai
 pydantic
-openai
-anthropic
 python-dotenv
+google-genai
