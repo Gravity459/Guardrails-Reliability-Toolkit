@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "validators": {
+    "guardrails/valid_length": {
+      "import_path": "guardrails_grhub_valid_length",
+      "exports": [
+        "ValidLength"
+      ],
+      "installed_at": "2026-08-10T15:05:15.424487+00:00",
+      "package_name": "guardrails-grhub-valid-length"
+    },
+    "guardrails/valid_range": {
+      "import_path": "guardrails_grhub_valid_range",
+      "exports": [
+        "ValidRange"
+      ],
+      "installed_at": "2026-08-10T15:05:20.465658+00:00",
+      "package_name": "guardrails-grhub-valid-range"
+    }
+  }
+}

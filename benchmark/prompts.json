@@ -1,27 +1,27 @@
 [
   {
     "id": "normal-001",
-    "prompt": "Extract the phone's model, storage, camera, battery, and year as JSON matching the schema. Source: The Google Pixel 8 Pro ships with 256GB of storage, a 50MP dual camera system, a 5050mAh battery, and was released in 2023.",
+    "prompt": "Extract the phone's model, storage, camera, battery, and year as JSON. Source: The Google Pixel 8 Pro ships with 256GB of storage, a 50MP dual camera system, a 5050mAh battery, and was released in 2023.",
     "expected_failure": "none"
   },
   {
     "id": "normal-002",
-    "prompt": "Parse this product blurb into model, storage, camera, battery, and year JSON fields: Samsung Galaxy S24 Ultra comes with 512GB storage, a 200MP main camera, a 5000mAh battery, launched in 2024.",
+    "prompt": "Map this product blurb into model, storage, camera, battery, and year JSON fields: Samsung Galaxy S24 Ultra comes with 512GB storage, a 200MP main camera, a 5000mAh battery, launched in 2024.",
     "expected_failure": "none"
   },
   {
     "id": "normal-003",
-    "prompt": "From the text below, extract model, storage, camera, battery, and year. Text: Apple iPhone 15 Pro Max offers 256 GB storage, a 48MP camera, a 4441mAh battery, and debuted in 2023.",
+    "prompt": "Convert the text below to JSON with model, storage, camera, battery, and year. Text: Apple iPhone 15 Pro Max offers 256 GB storage, a 48MP camera, a 4441mAh battery, and debuted in 2023.",
     "expected_failure": "none"
   },
   {
     "id": "normal-004",
-    "prompt": "Return JSON with model, storage, camera, battery, and year for: OnePlus 12 features 256GB storage, a 50MP triple camera, a 5400mAh battery, released in 2024.",
+    "prompt": "Output JSON with model, storage, camera, battery, and year for: OnePlus 12 features 256GB storage, a 50MP triple camera, a 5400mAh battery, released in 2024.",
     "expected_failure": "none"
   },
   {
     "id": "normal-005",
-    "prompt": "Extract structured phone specs (model, storage, camera, battery, year): Nothing Phone (2) has 128GB storage, a 50MP dual camera, a 4700mAh battery, and launched in 2023.",
+    "prompt": "Extract structured phone specs as JSON (model, storage, camera, battery, year): Nothing Phone (2) has 128GB storage, a 50MP dual camera, a 4700mAh battery, and launched in 2023.",
     "expected_failure": "none"
   },
   {
@@ -31,17 +31,17 @@
   },
   {
     "id": "normal-007",
-    "prompt": "Please extract model, storage, camera, battery, and year from: Motorola Edge 40 Neo packs 256GB storage, a 50MP camera, a 5000mAh battery, and arrived in 2023.",
+    "prompt": "Please extract model, storage, camera, battery, and year as JSON from: Motorola Edge 40 Neo packs 256GB storage, a 50MP camera, a 5000mAh battery, and arrived in 2023.",
     "expected_failure": "none"
   },
   {
     "id": "normal-008",
-    "prompt": "Schema extraction required — fields model, storage, camera, battery, year. Input: Sony Xperia 1 V has 256GB storage, a 48MP triple camera, a 5000mAh battery, released in 2023.",
+    "prompt": "Map to JSON schema fields model, storage, camera, battery, year. Input: Sony Xperia 1 V has 256GB storage, a 48MP triple camera, a 5000mAh battery, released in 2023.",
     "expected_failure": "none"
   },
   {
     "id": "normal-009",
-    "prompt": "Pull model, storage, camera, battery, and year into JSON: ASUS Zenfone 10 ships with 128GB storage, a 50MP camera, a 4300mAh battery, launched in 2023.",
+    "prompt": "Output model, storage, camera, battery, and year into JSON: ASUS Zenfone 10 ships with 128GB storage, a 50MP camera, a 4300mAh battery, launched in 2023.",
     "expected_failure": "none"
   },
   {
@@ -51,37 +51,37 @@
   },
   {
     "id": "normal-011",
-    "prompt": "From this ad copy, extract model/storage/camera/battery/year: Meet the Samsung Galaxy A55 — 256 GB storage, 50MP camera, 5000mAh battery, year 2024.",
+    "prompt": "From this ad copy, extract model/storage/camera/battery/year as JSON: Meet the Samsung Galaxy A55 — 256 GB storage, 50MP camera, 5000mAh battery, year 2024.",
     "expected_failure": "none"
   },
   {
     "id": "normal-012",
-    "prompt": "JSON schema fields needed: model, storage, camera, battery, year. Source text: The iPhone 14 has 128GB storage, a 12MP dual camera, a 3279mAh battery, released in 2022.",
+    "prompt": "Convert to JSON schema fields: model, storage, camera, battery, year. Source text: The iPhone 14 has 128GB storage, a 12MP dual camera, a 3279mAh battery, released in 2022.",
     "expected_failure": "none"
   },
   {
     "id": "normal-013",
-    "prompt": "Extract specs: Fairphone 5 offers 256GB storage, a 50MP camera, a 4200mAh battery, and launched in 2023. Return model, storage, camera, battery, year.",
+    "prompt": "Extract specs as JSON: Fairphone 5 offers 256GB storage, a 50MP camera, a 4200mAh battery, and launched in 2023. Return model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-014",
-    "prompt": "Turn this into structured JSON (model, storage, camera, battery, year): Oppo Find X7 Ultra comes with 512GB storage, a 50MP Hasselblad camera, a 5000mAh battery, released in 2024.",
+    "prompt": "Map this into structured JSON (model, storage, camera, battery, year): Oppo Find X7 Ultra comes with 512GB storage, a 50MP Hasselblad camera, a 5000mAh battery, released in 2024.",
     "expected_failure": "none"
   },
   {
     "id": "normal-015",
-    "prompt": "Extract model, storage, camera, battery, year from the listing: Vivo X100 Pro — 256GB storage, 50MP Zeiss camera, 5400mAh battery, 2023 release.",
+    "prompt": "Output JSON for model, storage, camera, battery, year from the listing: Vivo X100 Pro — 256GB storage, 50MP Zeiss camera, 5400mAh battery, 2023 release.",
     "expected_failure": "none"
   },
   {
     "id": "normal-016",
-    "prompt": "Parse into required fields model, storage, camera, battery, year: Realme GT 5 Pro has 512GB storage, a 50MP camera, a 5400mAh battery, launched in 2023.",
+    "prompt": "Convert into required JSON fields model, storage, camera, battery, year: Realme GT 5 Pro has 512GB storage, a 50MP camera, a 5400mAh battery, launched in 2023.",
     "expected_failure": "none"
   },
   {
     "id": "normal-017",
-    "prompt": "Product notes — extract model, storage, camera, battery, year: Honor Magic6 Pro features 512GB storage, a 50MP camera, a 5600mAh battery, released in 2024.",
+    "prompt": "Product notes — extract model, storage, camera, battery, year as JSON: Honor Magic6 Pro features 512GB storage, a 50MP camera, a 5600mAh battery, released in 2024.",
     "expected_failure": "none"
   },
   {
@@ -91,12 +91,12 @@
   },
   {
     "id": "normal-019",
-    "prompt": "Extraction task: model, storage, camera, battery, year. Blurb: Google Pixel Fold has 256GB storage, a 48MP camera, a 4821mAh battery, launched in 2023.",
+    "prompt": "Map extraction task to JSON: model, storage, camera, battery, year. Blurb: Google Pixel Fold has 256GB storage, a 48MP camera, a 4821mAh battery, launched in 2023.",
     "expected_failure": "none"
   },
   {
     "id": "normal-020",
-    "prompt": "Read and extract model/storage/camera/battery/year: Samsung Galaxy Z Flip5 ships with 256GB storage, a 12MP dual camera, a 3700mAh battery, released in 2023.",
+    "prompt": "Read and output model/storage/camera/battery/year as JSON: Samsung Galaxy Z Flip5 ships with 256GB storage, a 12MP dual camera, a 3700mAh battery, released in 2023.",
     "expected_failure": "none"
   },
   {
@@ -106,22 +106,22 @@
   },
   {
     "id": "normal-022",
-    "prompt": "Catalog entry to JSON (model, storage, camera, battery, year): Motorola Razr 40 Ultra — 512GB storage, 12MP camera, 3800mAh battery, year 2023.",
+    "prompt": "Convert catalog entry to JSON (model, storage, camera, battery, year): Motorola Razr 40 Ultra — 512GB storage, 12MP camera, 3800mAh battery, year 2023.",
     "expected_failure": "none"
   },
   {
     "id": "normal-023",
-    "prompt": "Extract the five fields model, storage, camera, battery, year: Xiaomi Redmi Note 13 Pro has 256GB storage, a 200MP camera, a 5100mAh battery, released in 2024.",
+    "prompt": "Extract the five fields model, storage, camera, battery, year as JSON: Xiaomi Redmi Note 13 Pro has 256GB storage, a 200MP camera, a 5100mAh battery, released in 2024.",
     "expected_failure": "none"
   },
   {
     "id": "normal-024",
-    "prompt": "Structured output request for: Tecno Camon 30 Premier with 512GB storage, a 50MP camera, a 5000mAh battery, launched in 2024. Fields: model, storage, camera, battery, year.",
+    "prompt": "Structured JSON output request for: Tecno Camon 30 Premier with 512GB storage, a 50MP camera, a 5000mAh battery, launched in 2024. Fields: model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-025",
-    "prompt": "Source paragraph: In 2022, Google released the Pixel 7 with 128GB storage, a 50MP dual camera, and a 4355mAh battery. Extract model, storage, camera, battery, year.",
+    "prompt": "Source paragraph: In 2022, Google released the Pixel 7 with 128GB storage, a 50MP dual camera, and a 4355mAh battery. Extract model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {
@@ -136,17 +136,17 @@
   },
   {
     "id": "normal-028",
-    "prompt": "Extract model, storage, camera, battery, and year. Device description: iPhone SE (3rd generation) has 128GB storage, a 12MP camera, a 2018mAh battery, released in 2022.",
+    "prompt": "Extract model, storage, camera, battery, and year as JSON. Device description: iPhone SE (3rd generation) has 128GB storage, a 12MP camera, a 2018mAh battery, released in 2022.",
     "expected_failure": "none"
   },
   {
     "id": "normal-029",
-    "prompt": "Map these specs to schema fields model/storage/camera/battery/year: Sony Xperia 5 V — 128GB storage, 48MP camera, 5000mAh battery, 2023.",
+    "prompt": "Map these specs to JSON schema fields model/storage/camera/battery/year: Sony Xperia 5 V — 128GB storage, 48MP camera, 5000mAh battery, 2023.",
     "expected_failure": "none"
   },
   {
     "id": "normal-030",
-    "prompt": "From retailer copy: Buy the Samsung Galaxy S23 (256 GB storage, 50MP camera, 3900mAh battery, 2023). Extract model, storage, camera, battery, year.",
+    "prompt": "From retailer copy: Buy the Samsung Galaxy S23 (256 GB storage, 50MP camera, 3900mAh battery, 2023). Extract model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {
@@ -156,7 +156,7 @@
   },
   {
     "id": "normal-032",
-    "prompt": "Extraction: The Google Pixel 6a launched in 2022 with 128GB storage, a 12.2MP dual camera, and a 4410mAh battery. Fields: model, storage, camera, battery, year.",
+    "prompt": "Extract as JSON: The Google Pixel 6a launched in 2022 with 128GB storage, a 12.2MP dual camera, and a 4410mAh battery. Fields: model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
@@ -171,22 +171,22 @@
   },
   {
     "id": "normal-035",
-    "prompt": "Extract schema fields from: In early 2024, the Galaxy S24 shipped with 256GB storage, a 50MP camera, and a 4000mAh battery. Identify model, storage, camera, battery, year.",
+    "prompt": "Extract schema fields as JSON from: In early 2024, the Galaxy S24 shipped with 256GB storage, a 50MP camera, and a 4000mAh battery. Identify model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-036",
-    "prompt": "Structured extraction — model, storage, camera, battery, year: Apple iPhone 13 Pro Max includes 512GB storage, a 12MP triple camera, a 4352mAh battery, released in 2021.",
+    "prompt": "Structured extraction to JSON — model, storage, camera, battery, year: Apple iPhone 13 Pro Max includes 512GB storage, a 12MP triple camera, a 4352mAh battery, released in 2021.",
     "expected_failure": "none"
   },
   {
     "id": "normal-037",
-    "prompt": "Source: Xiaomi 13T Pro (512GB, 50MP Leica camera, 5000mAh) was released in 2023. Extract model, storage, camera, battery, year. Note storage is 512GB.",
+    "prompt": "Source: Xiaomi 13T Pro (512GB, 50MP Leica camera, 5000mAh) was released in 2023. Extract model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {
     "id": "normal-038",
-    "prompt": "Pull out model, storage, camera, battery, year: The Oppo Reno11 Pro has 256GB storage, a 50MP camera, a 4600mAh battery, and launched in 2023.",
+    "prompt": "Output model, storage, camera, battery, year as JSON: The Oppo Reno11 Pro has 256GB storage, a 50MP camera, a 4600mAh battery, and launched in 2023.",
     "expected_failure": "none"
   },
   {
@@ -196,7 +196,7 @@
   },
   {
     "id": "normal-040",
-    "prompt": "Describe-to-schema: Realme 12 Pro+ packs 256GB storage, a 50MP camera, a 5000mAh battery, launched in 2024. Extract model, storage, camera, battery, year.",
+    "prompt": "Describe-to-schema: Realme 12 Pro+ packs 256GB storage, a 50MP camera, a 5000mAh battery, launched in 2024. Extract model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {
@@ -206,12 +206,12 @@
   },
   {
     "id": "normal-042",
-    "prompt": "Spec summary to parse: Nokia XR21 — 128GB storage, 64MP camera, 4800mAh battery — release year 2023. Output model, storage, camera, battery, year.",
+    "prompt": "Spec summary to parse as JSON: Nokia XR21 — 128GB storage, 64MP camera, 4800mAh battery — release year 2023. Output model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-043",
-    "prompt": "From the press release excerpt: Google announced the Pixel 9 Pro in 2024 with 256GB storage, a 50MP camera, and a 5050mAh battery. Extract model, storage, camera, battery, year.",
+    "prompt": "From the press release excerpt: Google announced the Pixel 9 Pro in 2024 with 256GB storage, a 50MP camera, and a 5050mAh battery. Extract model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {
@@ -221,22 +221,22 @@
   },
   {
     "id": "normal-045",
-    "prompt": "User review excerpt for extraction: I bought the ASUS Zenfone 9 in 2022 — it has 128GB storage, a 50MP camera, and a 4300mAh battery. Fields: model, storage, camera, battery, year.",
+    "prompt": "User review excerpt for JSON extraction: I bought the ASUS Zenfone 9 in 2022 — it has 128GB storage, a 50MP camera, and a 4300mAh battery. Fields: model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-046",
-    "prompt": "Extract model, storage, camera, battery, year: Fairphone 4 offers 256GB storage, a 48MP dual camera, a 3905mAh battery, released in 2021.",
+    "prompt": "Extract model, storage, camera, battery, year as JSON: Fairphone 4 offers 256GB storage, a 48MP dual camera, a 3905mAh battery, released in 2021.",
     "expected_failure": "none"
   },
   {
     "id": "normal-047",
-    "prompt": "Schema fill from prose: The Motorola Edge 30 Ultra arrived in 2022 with 256GB storage, a 200MP camera, and a 4610mAh battery. Return model, storage, camera, battery, year.",
+    "prompt": "Schema fill from prose to JSON: The Motorola Edge 30 Ultra arrived in 2022 with 256GB storage, a 200MP camera, and a 4610mAh battery. Return model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-048",
-    "prompt": "Product comparison note (single device): Compared to peers, the OnePlus Open stands out — 512GB storage, 48MP camera, 4805mAh battery, released 2023. Extract model, storage, camera, battery, year.",
+    "prompt": "Product comparison note (single device): Compared to peers, the OnePlus Open stands out — 512GB storage, 48MP camera, 4805mAh battery, released 2023. Extract model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {
@@ -246,7 +246,7 @@
   },
   {
     "id": "normal-050",
-    "prompt": "Extract the required fields model, storage, camera, battery, year from: Samsung Galaxy Z Fold5 has 512GB storage, a 50MP camera, a 4400mAh battery, launched in 2023.",
+    "prompt": "Extract the required fields model, storage, camera, battery, year as JSON from: Samsung Galaxy Z Fold5 has 512GB storage, a 50MP camera, a 4400mAh battery, launched in 2023.",
     "expected_failure": "none"
   },
   {
@@ -256,17 +256,17 @@
   },
   {
     "id": "normal-052",
-    "prompt": "Parse: In 2019, Apple released the iPhone 11 with 128GB storage, a 12MP dual camera, and a 3110mAh battery. Extract model, storage, camera, battery, year.",
+    "prompt": "Parse as JSON: In 2019, Apple released the iPhone 11 with 128GB storage, a 12MP dual camera, and a 3110mAh battery. Extract model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-053",
-    "prompt": "Extraction request for: Xiaomi POCO F6 Pro features 512GB storage, a 50MP camera, a 5000mAh battery, launched in 2024. Keys: model, storage, camera, battery, year.",
+    "prompt": "Extraction request for JSON: Xiaomi POCO F6 Pro features 512GB storage, a 50MP camera, a 5000mAh battery, launched in 2024. Keys: model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-054",
-    "prompt": "From warehouse notes: Item = Sony Xperia 10 V; capacity = 128GB; cam = 48MP; batt = 5000mAh; released = 2023. Map to model, storage, camera, battery, year JSON.",
+    "prompt": "From warehouse notes: Item = Sony Xperia 10 V; capacity = 128GB; cam = 48MP; batt = 5000mAh; released = 2023. Map to model, storage, camera, battery, year JSON. Map to model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {
@@ -281,12 +281,12 @@
   },
   {
     "id": "normal-057",
-    "prompt": "Structured parse of: Vivo Y100 — 256GB storage, 64MP camera, 4500mAh battery — year 2023. Output model, storage, camera, battery, year.",
+    "prompt": "Structured parse to JSON of: Vivo Y100 — 256GB storage, 64MP camera, 4500mAh battery — year 2023. Output model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
     "id": "normal-058",
-    "prompt": "Please extract: The Realme Narzo 60 Pro (256GB, 100MP camera, 5000mAh) was released in 2023. Provide model, storage, camera, battery, year. Storage is 256GB.",
+    "prompt": "Please extract as JSON: The Realme Narzo 60 Pro (256GB, 100MP camera, 5000mAh) was released in 2023. Provide model, storage, camera, battery, year. Storage is 256GB. Provide model, storage, camera, battery, year.",
     "expected_failure": "none"
   },
   {
@@ -296,7 +296,7 @@
   },
   {
     "id": "normal-060",
-    "prompt": "Final clean sample: Google Pixel 5 shipped in 2020 with 128GB storage, a 12.2MP dual camera, and a 4080mAh battery. Extract model, storage, camera, battery, year.",
+    "prompt": "Final clean sample: Google Pixel 5 shipped in 2020 with 128GB storage, a 12.2MP dual camera, and a 4080mAh battery. Extract model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {

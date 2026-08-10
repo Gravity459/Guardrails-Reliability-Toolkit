@@ -4,3 +4,4 @@ guardrails-ai
 pydantic
 python-dotenv
 google-genai
+pytest
