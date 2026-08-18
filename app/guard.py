@@ -1,17 +1,18 @@
 from guardrails import Guard
+from google.genai import errors as genai_errors
 
 from app import call_llm
-from app.schemas.guarded_schema import Phone
+from app.schemas.guarded_schema import GuardedPhone
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 
-guard = Guard.for_pydantic(output_class=Phone)
+guard = Guard.for_pydantic(output_class=GuardedPhone)
 
 
-def guarded_call_llm(prompt: str) -> Phone:
+def guarded_call_llm(prompt: str) -> GuardedPhone:
     try:
         result = guard(
             llm_api=call_llm,
@@ -22,6 +23,10 @@ def guarded_call_llm(prompt: str) -> Phone:
         return result.validated_output
     except Exception as e:
         print(f"Error: {e}")
+        if isinstance(e, genai_errors.APIError) or isinstance(
+            e.__cause__, genai_errors.APIError
+        ):
+            raise
         return None
 
 

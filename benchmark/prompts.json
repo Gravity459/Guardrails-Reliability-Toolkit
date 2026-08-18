@@ -11,7 +11,7 @@
   },
   {
     "id": "normal-003",
-    "prompt": "Convert the text below to JSON with model, storage, camera, battery, and year. Text: Apple iPhone 15 Pro Max offers 256 GB storage, a 48MP camera, a 4441mAh battery, and debuted in 2023.",
+    "prompt": "Convert the text below to JSON with model, storage, camera, battery, and year. Text: Apple iPhone 15 Pro Max offers 256GB storage, a 48MP camera, a 4441mAh battery, and debuted in 2023.",
     "expected_failure": "none"
   },
   {
@@ -51,7 +51,7 @@
   },
   {
     "id": "normal-011",
-    "prompt": "From this ad copy, extract model/storage/camera/battery/year as JSON: Meet the Samsung Galaxy A55 — 256 GB storage, 50MP camera, 5000mAh battery, year 2024.",
+    "prompt": "From this ad copy, extract model/storage/camera/battery/year as JSON: Meet the Samsung Galaxy A55 — 256GB storage, 50MP camera, 5000mAh battery, year 2024.",
     "expected_failure": "none"
   },
   {
@@ -146,7 +146,7 @@
   },
   {
     "id": "normal-030",
-    "prompt": "From retailer copy: Buy the Samsung Galaxy S23 (256 GB storage, 50MP camera, 3900mAh battery, 2023). Extract model, storage, camera, battery, year as JSON.",
+    "prompt": "From retailer copy: Buy the Samsung Galaxy S23 (256GB storage, 50MP camera, 3900mAh battery, 2023). Extract model, storage, camera, battery, year as JSON.",
     "expected_failure": "none"
   },
   {
@@ -321,7 +321,7 @@
   },
   {
     "id": "ambiguous-005",
-    "prompt": "Schema extraction (model, storage, camera, battery, year): The device ships with 128 GB storage, a 12MP camera, a 4000mAh battery, and debuted in 2022. No model is listed.",
+    "prompt": "Schema extraction (model, storage, camera, battery, year): The device ships with 128GB storage, a 12MP camera, a 4000mAh battery, and debuted in 2022. No model is listed.",
     "expected_failure": "missing model"
   },
   {
@@ -511,7 +511,7 @@
   },
   {
     "id": "ambiguous-043",
-    "prompt": "Extract fields: iPhone 15 Pro Max offers either 256 GB or 1TB depending on which sentence you read; 48MP camera, 4441mAh battery, 2023. Resolve model, storage, camera, battery, year.",
+    "prompt": "Extract fields: iPhone 15 Pro Max offers either 256GB or 1TB depending on which sentence you read; 48MP camera, 4441mAh battery, 2023. Resolve model, storage, camera, battery, year.",
     "expected_failure": "contradictory storage"
   },
   {

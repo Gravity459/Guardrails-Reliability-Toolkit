@@ -33,6 +33,7 @@ def run_prompt(entry: dict) -> dict:
     latency_ms = (time.perf_counter() - start) * 1000
 
     ok = validated is not None
+    failed_kind = None if ok else ("llm_call_failed" if error else "guard_failed")
     return {
         "id": entry["id"],
         "expected_failure": entry["expected_failure"],
@@ -42,9 +43,9 @@ def run_prompt(entry: dict) -> dict:
         ),
         "latency_ms": latency_ms,
         "valid_json": ok,
-        "json_error": None if ok else "guard_failed",
+        "json_error": failed_kind,
         "schema_valid": ok,
-        "schema_error": None if ok else "guard_failed",
+        "schema_error": failed_kind,
         "passed": ok,
         "error": error,
     }
