@@ -1,0 +1,28 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # No secrets needed:
+      # - tests/conftest.py sets a dummy Gemini key; every Gemini call is mocked.
+      # - Guardrails Hub validators (ValidLength, ValidRange) need a hub token to
+      #   install, so conftest.py registers stand-ins when they are missing.
+      - name: Run tests
+        run: python -m pytest -q
