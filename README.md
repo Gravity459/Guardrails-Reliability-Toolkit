@@ -37,8 +37,23 @@ Invalid or non-positive values fall back to the defaults above.
 | `LLM_API_KEY` | Gemini API key |
 | `LLM_PRIMARY_MODEL` | Model id (for example `gemini-3.5-flash-lite`) |
 
+## Setup (uv)
+
+This project uses [uv](https://docs.astral.sh/uv/). Dependencies live in `pyproject.toml`, exact versions in `uv.lock`.
+
+```bash
+uv sync                              # create .venv and install everything (incl. pytest)
+uv run uvicorn app.main:app --reload # run the API
+uv run python -m benchmark.baseline_runner
+uv run python -m benchmark.guarded_runner
+```
+
+Add a dependency with `uv add <package>` (or `uv add --dev <package>` for dev tools).
+
 ### Tests
 
 ```bash
-./venv/bin/python -m pytest tests/ -v
+uv run pytest -v
 ```
+
+Tests need no API key and no network: Gemini calls are mocked and `tests/conftest.py` sets a dummy key.
