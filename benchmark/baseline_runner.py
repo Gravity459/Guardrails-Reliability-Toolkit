@@ -69,7 +69,7 @@ def run_prompt(entry: dict) -> dict:
 
     start = time.perf_counter()
     try:
-        raw_output = call_llm(prompt, MODEL)
+        raw_output = call_llm([{"role": "user", "content": prompt}], MODEL)
         latency_ms = (time.perf_counter() - start) * 1000
         print(f"Raw output: {raw_output}")
     except Exception as e:
