@@ -23,21 +23,21 @@ class GuardedPhone(BaseModel):
 
     model: str = Field(
         description="The model of the phone",
-        validators=[ValidLength(min=2, max=50)],
+        json_schema_extra={"validators": [ValidLength(min=2, max=50)]},
     )
     storage: str = Field(
         description="The storage of the phone (64GB, 128GB, 256GB, 512GB, or 1TB)",
-        validators=[ValidPhoneStorage()],
+        json_schema_extra={"validators": [ValidPhoneStorage()]},
     )
     camera: str = Field(
         description="The camera of the phone",
-        validators=[ValidLength(min=2, max=100)],
+        json_schema_extra={"validators": [ValidLength(min=2, max=100)]},
     )
     battery: str = Field(
         description="The battery of the phone",
-        validators=[ValidLength(min=2, max=50)],
+        json_schema_extra={"validators": [ValidLength(min=2, max=50)]},
     )
     year: int = Field(
         description="The year of the phone",
-        validators=[ValidRange(min=2000, max=2030)],
+        json_schema_extra={"validators": [ValidRange(min=2000, max=2030)]},
     )

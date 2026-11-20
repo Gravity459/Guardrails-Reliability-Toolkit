@@ -1,0 +1,33 @@
+[project]
+name = "guardrails-reliability-toolkit"
+version = "0.1.0"
+description = "FastAPI toolkit that enforces reliable structured LLM outputs using Guardrails AI, with benchmarking."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.165.0",
+    "uvicorn>=0.54.0",
+    "guardrails-ai>=0.11.0",
+    "pydantic>=2.14.4",
+    "python-dotenv>=1.2.4",
+    "google-genai>=3.6.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.uv]
+# This is an app, not a library: install dependencies only, don't build a package.
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = [
+    # typer (used by the guardrails CLI) calls click APIs deprecated in click 8.x.
+    # guardrails-ai pins typer<0.20, so we cannot upgrade typer to a fixed version.
+    "ignore::DeprecationWarning:typer",
+    "ignore::DeprecationWarning:typer.*",
+]
