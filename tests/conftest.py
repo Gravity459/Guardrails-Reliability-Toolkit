@@ -14,6 +14,25 @@ import os
 
 os.environ.setdefault("LLM_API_KEY", "test-dummy-key")
 os.environ.setdefault("LLM_PRIMARY_MODEL", "gemini-test")
+# Run validators synchronously (no asyncio event loop) in tests.
+os.environ.setdefault("GUARDRAILS_RUN_SYNC", "true")
+
+
+def _disable_guardrails_telemetry() -> None:
+    """Stop Guardrails sending anonymous metrics over the network during tests.
+
+    Every Guard() re-reads ~/.guardrailsrc (metrics default to on), so force
+    its telemetry setting off before `app` creates its guard.
+    """
+    from guardrails import Guard
+
+    original = Guard._configure_hub_telemtry  # (sic) Guardrails' own spelling
+    Guard._configure_hub_telemtry = lambda self, allow_metrics_collection=None: original(
+        self, False
+    )
+
+
+_disable_guardrails_telemetry()
 
 
 def _install_hub_validator_stubs() -> None:

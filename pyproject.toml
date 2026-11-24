@@ -30,4 +30,6 @@ filterwarnings = [
     # guardrails-ai pins typer<0.20, so we cannot upgrade typer to a fixed version.
     "ignore::DeprecationWarning:typer",
     "ignore::DeprecationWarning:typer.*",
+    # guardrails' own tracing code calls its deprecated to_dict() on every guard run.
+    "ignore:Use .* instead:DeprecationWarning:guardrails.telemetry.*",
 ]
