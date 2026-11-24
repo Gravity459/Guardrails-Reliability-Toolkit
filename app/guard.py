@@ -2,6 +2,7 @@ from guardrails import Guard
 from google.genai import errors as genai_errors
 
 from app import call_llm
+from app.prompts import build_messages
 from app.schemas.guarded_schema import GuardedPhone
 import os
 from dotenv import load_dotenv
@@ -12,11 +13,16 @@ load_dotenv()
 guard = Guard.for_pydantic(output_class=GuardedPhone)
 
 
+def _llm_api(*, messages: list[dict], **kwargs) -> str:
+    """Guardrails expects `messages` as a keyword-only argument."""
+    return call_llm(messages, **kwargs)
+
+
 def guarded_call_llm(prompt: str) -> GuardedPhone:
     try:
         result = guard(
-            llm_api=call_llm,
-            messages=[{"role": "user", "content": prompt}],
+            llm_api=_llm_api,
+            messages=build_messages(prompt),
             model=os.getenv("LLM_PRIMARY_MODEL"),
         )
         print(result)

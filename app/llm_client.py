@@ -150,6 +150,11 @@ def call_llm(
     contents = "\n\n".join(
         str(m["content"]) for m in messages if m.get("role") != "system"
     )
+    # Gemini takes system messages separately, as system_instruction.
+    system = "\n\n".join(
+        str(m["content"]) for m in messages if m.get("role") == "system"
+    )
+    config = types.GenerateContentConfig(system_instruction=system) if system else None
 
     attempts = _env_int("LLM_RETRY_ATTEMPTS", _DEFAULT_ATTEMPTS)
     last_wait: float | None = None
@@ -160,6 +165,7 @@ def call_llm(
             response = client.models.generate_content(
                 model=kwargs.get("model", model),
                 contents=contents,
+                config=config,
             )
             return response.text
         except genai_errors.ClientError as e:
