@@ -1,5 +1,6 @@
 from unittest.mock import patch
 
+from app.prompts import SYSTEM_PROMPT, build_messages
 from benchmark import baseline_runner
 
 VALID_JSON = (
@@ -15,7 +16,7 @@ def test_run_prompt_sends_message_list_and_passes():
         result = baseline_runner.run_prompt(entry)
 
     messages = fake.call_args.args[0]
-    assert messages == [{"role": "user", "content": "Extract the phone"}]
+    assert messages == build_messages("Extract the phone")
     assert result["passed"] is True
     assert result["error"] is None
 
@@ -36,4 +37,6 @@ def test_run_prompt_with_real_call_llm_reaches_gemini():
 
     assert result["error"] is None
     assert result["passed"] is True
-    assert models.generate_content.call_args.kwargs["contents"] == "Extract the phone"
+    kwargs = models.generate_content.call_args.kwargs
+    assert kwargs["contents"] == "Extract the phone"
+    assert kwargs["config"].system_instruction == SYSTEM_PROMPT

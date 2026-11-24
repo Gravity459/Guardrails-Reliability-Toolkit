@@ -19,6 +19,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from app import call_llm
+from app.prompts import build_messages
 from app.schemas.baseline_schema import Phone
 
 PROMPTS_PATH = BENCHMARK_DIR / "prompts.json"
@@ -69,7 +70,7 @@ def run_prompt(entry: dict) -> dict:
 
     start = time.perf_counter()
     try:
-        raw_output = call_llm([{"role": "user", "content": prompt}], MODEL)
+        raw_output = call_llm(build_messages(prompt), MODEL)
         latency_ms = (time.perf_counter() - start) * 1000
         print(f"Raw output: {raw_output}")
     except Exception as e:
