@@ -44,11 +44,28 @@ This project uses [uv](https://docs.astral.sh/uv/). Dependencies live in `pyproj
 ```bash
 uv sync                              # create .venv and install everything (incl. pytest)
 uv run uvicorn app.main:app --reload # run the API
-uv run python -m benchmark.baseline_runner
-uv run python -m benchmark.guarded_runner
 ```
 
 Add a dependency with `uv add <package>` (or `uv add --dev <package>` for dev tools).
+
+## Benchmark
+
+200 prompts in `benchmark/prompts.json`, each with a hand-written `answer`.
+Both runs use the same system prompt (`app/prompts.py`) and temperature 0.
+
+```bash
+uv run python -m benchmark.baseline_runner   # plain Gemini -> results_baseline.json
+uv run python -m benchmark.guarded_runner    # Gemini + Guardrails -> results_guarded.json
+uv run python -m benchmark.report            # score both, write benchmark/report.md
+```
+
+- Runners only save raw outputs; `benchmark/scorer.py` grades them.
+- Scoring: model and camera must match the answer **exactly** (case-sensitive);
+  storage/battery spacing and case are normalised ("256 GB" = "256GB"); year is an integer.
+- Responses are cached in `benchmark/cache/`, so reruns don't call Gemini.
+  Use `--refresh` to call again. Changing the system prompt invalidates the cache.
+- The guarded run needs the Guardrails Hub validators: `guardrails configure` (token),
+  then `guardrails hub install hub://guardrails/valid_length` and `hub://guardrails/valid_range`.
 
 ### Tests
 

@@ -1,6 +1,7 @@
 """Checks the hand-written answer key in benchmark/prompts.json."""
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -79,3 +80,21 @@ def test_failure_type_field_is_null(entry):
 )
 def test_normal_prompts_have_every_field(entry):
     assert None not in entry["answer"].values()
+
+
+# Exact-match formats (same rules as app/prompts.py SYSTEM_PROMPT).
+FORMATS = {
+    "model": re.compile(r"^[A-Za-z0-9][A-Za-z0-9 ()+.\-]*[A-Za-z0-9)+]$"),  # English, no outer spaces
+    "storage": re.compile(r"^\d+(GB|TB)$"),
+    "camera": re.compile(r"^\d+(\.\d+)?MP( (dual|triple|main|Leica|Hasselblad|Zeiss))?$"),
+    "battery": re.compile(r"^\d+mAh$"),
+}
+WITH_VALUES = [e for e in PROMPTS if isinstance(e["answer"], dict)]
+
+
+@pytest.mark.parametrize("entry", WITH_VALUES, ids=_ids(WITH_VALUES))
+def test_answer_strings_follow_exact_formats(entry):
+    for field, pattern in FORMATS.items():
+        value = entry["answer"][field]
+        if value is not None:
+            assert pattern.match(value), f"{field}={value!r}"

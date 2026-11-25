@@ -18,12 +18,13 @@ def _llm_api(*, messages: list[dict], **kwargs) -> str:
     return call_llm(messages, **kwargs)
 
 
-def guarded_call_llm(prompt: str) -> GuardedPhone:
+def guarded_call_llm(prompt: str, temperature: float = 0) -> GuardedPhone:
     try:
         result = guard(
             llm_api=_llm_api,
             messages=build_messages(prompt),
             model=os.getenv("LLM_PRIMARY_MODEL"),
+            temperature=temperature,
         )
         print(result)
         return result.validated_output

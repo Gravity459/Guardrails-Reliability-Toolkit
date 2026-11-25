@@ -143,7 +143,10 @@ client = build_client()
 
 
 def call_llm(
-    messages: list[dict], model: str = os.getenv("LLM_PRIMARY_MODEL"), **kwargs
+    messages: list[dict],
+    model: str = os.getenv("LLM_PRIMARY_MODEL"),
+    temperature: float | None = None,
+    **kwargs,
 ) -> str:
     messages = messages or []
 
@@ -154,7 +157,12 @@ def call_llm(
     system = "\n\n".join(
         str(m["content"]) for m in messages if m.get("role") == "system"
     )
-    config = types.GenerateContentConfig(system_instruction=system) if system else None
+    config_args = {}
+    if system:
+        config_args["system_instruction"] = system
+    if temperature is not None:
+        config_args["temperature"] = temperature
+    config = types.GenerateContentConfig(**config_args) if config_args else None
 
     attempts = _env_int("LLM_RETRY_ATTEMPTS", _DEFAULT_ATTEMPTS)
     last_wait: float | None = None
