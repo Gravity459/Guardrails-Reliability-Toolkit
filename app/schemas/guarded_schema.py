@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from guardrails import register_validator, Validator
-from guardrails.hub import ValidLength, ValidRange
+from guardrails_ai.valid_length import ValidLength
+from guardrails_ai.valid_range import ValidRange
 from guardrails.validator_base import FailResult, PassResult
 
 
@@ -47,25 +48,25 @@ class GuardedPhone(BaseModel):
     model: str | None = Field(
         default=None,
         description="The model of the phone",
-        json_schema_extra={"validators": [ValidLength(min=2, max=50)]},
+        json_schema_extra={"validators": [ValidLength(min=2, max=50, on_fail="reask")]},
     )
     storage: str | None = Field(
         default=None,
         description="The storage of the phone (64GB, 128GB, 256GB, 512GB, or 1TB)",
-        json_schema_extra={"validators": [ValidPhoneStorage()]},
+        json_schema_extra={"validators": [ValidPhoneStorage(on_fail="reask")]},
     )
     camera: str | None = Field(
         default=None,
         description="The camera of the phone",
-        json_schema_extra={"validators": [ValidLength(min=2, max=100)]},
+        json_schema_extra={"validators": [ValidLength(min=2, max=100, on_fail="reask")]},
     )
     battery: str | None = Field(
         default=None,
         description="The battery of the phone",
-        json_schema_extra={"validators": [ValidLength(min=2, max=50)]},
+        json_schema_extra={"validators": [ValidLength(min=2, max=50, on_fail="reask")]},
     )
     year: int | None = Field(
         default=None,
         description="The year of the phone",
-        json_schema_extra={"validators": [ValidRange(min=2000, max=2030)]},
+        json_schema_extra={"validators": [ValidRange(min=2000, max=2030, on_fail="reask")]},
     )

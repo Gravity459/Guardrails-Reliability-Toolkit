@@ -1,10 +1,18 @@
+"""Guarded: same prompt and model, wrapped in Guardrails validation + re-asks.
+
+Run: uv run python -m benchmark.guarded_runner [--refresh]
+Saves the guard's validated output (as JSON text) to results_guarded.json;
+score it with benchmark.report.
+"""
+
 from __future__ import annotations
 
+import argparse
 import json
-import sys
-import time
-from pathlib import Path
 import os
+import sys
+from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -14,71 +22,30 @@ ROOT = BENCHMARK_DIR.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app import guarded_call_llm
-from app.schemas.guarded_schema import GuardedPhone
-from benchmark.baseline_runner import build_meta
+from app import guarded_call_llm  # noqa: E402
+from benchmark.run_utils import TEMPERATURE, files_hash, run_benchmark  # noqa: E402
 
-PROMPTS_PATH = BENCHMARK_DIR / "prompts.json"
 RESULTS_PATH = BENCHMARK_DIR / "results_guarded.json"
 MODEL = os.getenv("LLM_PRIMARY_MODEL")
+# Part of every guarded cache key: editing the guard or its validators
+# means old cached guarded answers are not reused.
+GUARD_FILES = (ROOT / "app" / "guard.py", ROOT / "app" / "schemas" / "guarded_schema.py")
+GUARD_VERSION = files_hash(*GUARD_FILES)
 
 
-def run_prompt(entry: dict) -> dict:
-    start = time.perf_counter()
-    try:
-        validated = guarded_call_llm(entry["prompt"])
-        error = None
-    except Exception as e:
-        validated, error = None, str(e)
-    latency_ms = (time.perf_counter() - start) * 1000
-
-    ok = validated is not None
-    failed_kind = None if ok else ("llm_call_failed" if error else "guard_failed")
-    return {
-        "id": entry["id"],
-        "expected_failure": entry["expected_failure"],
-        "model": MODEL,
-        "raw_output": (
-            GuardedPhone.model_validate(validated).model_dump_json() if ok else None
-        ),
-        "latency_ms": latency_ms,
-        "valid_json": ok,
-        "json_error": failed_kind,
-        "schema_valid": ok,
-        "schema_error": failed_kind,
-        "passed": ok,
-        "error": error,
-    }
+def call(prompt: str) -> dict:
+    # API errors (e.g. quota) raise and are recorded as llm_call_failed by run_utils.
+    validated = guarded_call_llm(prompt, temperature=TEMPERATURE)
+    if validated is None:
+        return {"raw_output": None, "error": "guard_failed"}
+    return {"raw_output": json.dumps(validated, ensure_ascii=False), "error": None}
 
 
-def main() -> None:
-    with PROMPTS_PATH.open(encoding="utf-8") as f:
-        prompts = json.load(f)
-
-    total = len(prompts)
-    results: list[dict] = []
-
-    for i, entry in enumerate(prompts, start=1):
-        print(f"[{i}/{total}] {entry['id']} ...", flush=True)
-        result = run_prompt(entry)
-        status = "PASS" if result["passed"] else "FAIL"
-        print(f"  -> {status}", flush=True)
-        results.append(result)
-
-    payload = {
-        "meta": build_meta(results),
-        "results": results,
-    }
-
-    with RESULTS_PATH.open("w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2, ensure_ascii=False)
-
-    meta = payload["meta"]
-    print(
-        f"\nDone. {meta['passed']}/{meta['total']} passed "
-        f"({meta['pass_rate']:.1%}). Wrote {RESULTS_PATH}",
-        flush=True,
-    )
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--refresh", action="store_true", help="ignore the cache and call Gemini again")
+    args = parser.parse_args(argv)
+    run_benchmark("guarded", call, MODEL, RESULTS_PATH, refresh=args.refresh, cache_salt=GUARD_VERSION)
 
 
 if __name__ == "__main__":

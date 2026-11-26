@@ -917,6 +917,31 @@ wheels = [
 ]
 
 [[package]]
+name = "guardrails-ai-valid-length"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "guardrails-ai" },
+    { name = "rstr" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e0/b5/3a11c6947c668fdfbf0afa5907228c84667c11b728ab6de419a3805f4109/guardrails_ai_valid_length-0.1.0.tar.gz", hash = "sha256:a03342da693e528d59d0b4423ab6d2439c6b9826fedcf6d7a16649f7040f4204", size = 4549, upload-time = "2026-07-14T19:38:12.637Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/95/e4/16356c06ee0ce81cc980cee4e492cb2aa6f2df0eaca6b82b8d2caa2166e6/guardrails_ai_valid_length-0.1.0-py3-none-any.whl", hash = "sha256:5e9a92a0dba699e50213bc4bc670ae2a4f0ee6b5ce2ab92ef649f33db63094df", size = 4030, upload-time = "2026-07-14T19:38:11.602Z" },
+]
+
+[[package]]
+name = "guardrails-ai-valid-range"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "guardrails-ai" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/26/04/10612f13a9f972e83b04fd9e94c862372e4adbc8f0f391eb237da788b473/guardrails_ai_valid_range-0.1.0.tar.gz", hash = "sha256:156cc93c979b777553de2a0ebac6f4ccacfed103e786dcdd6c0d771d23043221", size = 3839, upload-time = "2026-07-12T21:01:35.584Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b8/91/08abd57c36b6d6ed852573a2ea0cebaefa0eb42ffc5d689e15523111b7d7/guardrails_ai_valid_range-0.1.0-py3-none-any.whl", hash = "sha256:124f48ca1d048fb05c87f79528510f5801d395f60d8b2e66f2e3e0f7a4576475", size = 3677, upload-time = "2026-07-12T21:01:34.472Z" },
+]
+
+[[package]]
 name = "guardrails-hub-types"
 version = "0.0.4"
 source = { registry = "https://pypi.org/simple" }
@@ -933,6 +958,8 @@ dependencies = [
     { name = "fastapi" },
     { name = "google-genai" },
     { name = "guardrails-ai" },
+    { name = "guardrails-ai-valid-length" },
+    { name = "guardrails-ai-valid-range" },
     { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "uvicorn" },
@@ -948,6 +975,8 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.165.0" },
     { name = "google-genai", specifier = ">=3.6.1" },
     { name = "guardrails-ai", specifier = ">=0.11.0" },
+    { name = "guardrails-ai-valid-length", specifier = ">=0.1.0" },
+    { name = "guardrails-ai-valid-range", specifier = ">=0.1.0" },
     { name = "pydantic", specifier = ">=2.14.4" },
     { name = "python-dotenv", specifier = ">=1.2.4" },
     { name = "uvicorn", specifier = ">=0.54.0" },

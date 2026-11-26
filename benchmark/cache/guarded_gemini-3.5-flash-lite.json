@@ -1,0 +1,1202 @@
+{
+  "000f9a9ce7146fa6": {
+    "error": null,
+    "latency_ms": 1937.5,
+    "raw_output": "{\"model\": \"OnePlus 12\", \"camera\": \"50MP\", \"battery\": \"5400mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "0035808400fc42b7": {
+    "error": null,
+    "latency_ms": 1131.2,
+    "raw_output": "{\"model\": \"OnePlus 12\", \"camera\": \"50MP triple\", \"battery\": \"5400mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "00a88ef51c17b2e5": {
+    "error": null,
+    "latency_ms": 711.7,
+    "raw_output": "{\"model\": \"Realme GT 5 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5400mAh\"}",
+    "wait_ms": 0.0
+  },
+  "02340e7206224620": {
+    "error": null,
+    "latency_ms": 1050.6,
+    "raw_output": "{\"model\": \"Samsung Galaxy S24 Ultra\", \"storage\": \"512GB\", \"camera\": \"200MP main\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "0286c0bad75552d8": {
+    "error": null,
+    "latency_ms": 1461.4,
+    "raw_output": "{\"storage\": \"512GB\"}",
+    "wait_ms": 0.0
+  },
+  "0308e5aa80f984b1": {
+    "error": null,
+    "latency_ms": 1692.8,
+    "raw_output": "{\"model\": \"iPhone SE (3rd generation)\", \"storage\": \"128GB\", \"camera\": \"12MP\", \"battery\": \"2018mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "03459f73a2451ccd": {
+    "error": null,
+    "latency_ms": 880.7,
+    "raw_output": "{\"model\": \"OnePlus 12\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5400mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "0356def473f992c7": {
+    "error": null,
+    "latency_ms": 4014.9,
+    "raw_output": "{\"model\": \"Vivo X100 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP Zeiss\", \"battery\": \"5400mAh\"}",
+    "wait_ms": 0.0
+  },
+  "05461bf437157443": {
+    "error": null,
+    "latency_ms": 1046.5,
+    "raw_output": "{\"model\": \"Samsung Galaxy A35 5G\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "087eb5e99fa2accf": {
+    "error": null,
+    "latency_ms": 1843.3,
+    "raw_output": "{\"model\": \"Xiaomi 14 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP Leica\", \"battery\": \"4880mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "0af26d3954dbee3d": {
+    "error": null,
+    "latency_ms": 792.4,
+    "raw_output": "{\"model\": \"Motorola Edge 40 Neo\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "0d252c28c32b8049": {
+    "error": null,
+    "latency_ms": 2015.3,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "11cfd1f52863f14b": {
+    "error": null,
+    "latency_ms": 1477.6,
+    "raw_output": "{\"model\": \"Samsung Galaxy S24 Ultra\", \"storage\": \"512GB\", \"camera\": \"200MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "13899cd505687046": {
+    "error": null,
+    "latency_ms": 5327.0,
+    "raw_output": "{\"model\": \"Oppo Find X7 Ultra\", \"storage\": \"512GB\", \"camera\": \"50MP Hasselblad\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "174f1abaf792698f": {
+    "error": null,
+    "latency_ms": 849.4,
+    "raw_output": "{\"storage\": \"256GB\", \"camera\": \"50MP triple\", \"battery\": \"4800mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "177ce2a5bc67fd9a": {
+    "error": null,
+    "latency_ms": 857.3,
+    "raw_output": "{\"model\": \"Google Pixel 7a\", \"storage\": \"128GB\", \"camera\": \"64MP dual\", \"battery\": \"4385mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "1c811f5f4930245a": {
+    "error": null,
+    "latency_ms": 637.4,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "1d0c15002c84255a": {
+    "error": null,
+    "latency_ms": 1097.6,
+    "raw_output": "{\"model\": \"Nothing Phone (2)\", \"storage\": \"128GB\", \"camera\": \"50MP dual\", \"battery\": \"4700mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "207f898d26d60b83": {
+    "error": null,
+    "latency_ms": 720.8,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "22db045d7f931ea3": {
+    "error": null,
+    "latency_ms": 1646.3,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "241b5ae1e7a2e93b": {
+    "error": null,
+    "latency_ms": 783.3,
+    "raw_output": "{\"model\": \"ASUS Zenfone 9\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"4300mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "2567eb6270edf48a": {
+    "error": null,
+    "latency_ms": 1324.2,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "2657ba6b66b804e0": {
+    "error": null,
+    "latency_ms": 863.3,
+    "raw_output": "{\"model\": \"Nothing Phone (2)\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"4700mAh\"}",
+    "wait_ms": 0.0
+  },
+  "2812b0127d709ed2": {
+    "error": null,
+    "latency_ms": 679.9,
+    "raw_output": "{\"model\": \"Nothing Phone (1)\", \"storage\": \"256GB\", \"camera\": \"50MP dual\", \"battery\": \"4500mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "28e626c6ddd71069": {
+    "error": null,
+    "latency_ms": 712.4,
+    "raw_output": "{\"model\": \"Google Pixel 6a\", \"storage\": \"128GB\", \"camera\": \"12.2MP dual\", \"battery\": \"4410mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "2b3b03a3afc30b26": {
+    "error": null,
+    "latency_ms": 2230.6,
+    "raw_output": "{\"model\": \"Nothing Phone (2)\", \"storage\": \"128GB\", \"camera\": \"50MP dual\", \"battery\": \"4700mAh\", \"year\": 2023}",
+    "wait_ms": 38000.0
+  },
+  "2b542157bd9746a2": {
+    "error": null,
+    "latency_ms": 1122.2,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "2be1a00726e99036": {
+    "error": null,
+    "latency_ms": 6258.9,
+    "raw_output": "{\"model\": \"Sony Xperia 10 V\", \"storage\": \"128GB\", \"camera\": \"48MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "2cc013eeb00bb99b": {
+    "error": null,
+    "latency_ms": 859.1,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "2dc187d5048ab3e3": {
+    "error": null,
+    "latency_ms": 675.9,
+    "raw_output": "{\"model\": \"Samsung Galaxy S24 Ultra\", \"storage\": \"512GB\", \"camera\": \"200MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "2ef230cd10d748df": {
+    "error": null,
+    "latency_ms": 804.1,
+    "raw_output": "{\"model\": \"Google Pixel Fold\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4821mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "30baea687adbadbc": {
+    "error": null,
+    "latency_ms": 951.3,
+    "raw_output": "{\"model\": \"Asus ROG Phone 8\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5500mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "32a3e0fae6a75f5e": {
+    "error": null,
+    "latency_ms": 875.4,
+    "raw_output": "{\"model\": \"Samsung Galaxy A55\", \"storage\": \"256GB\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "33b3eec13748f3e7": {
+    "error": null,
+    "latency_ms": 825.1,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "33e0984ed915275e": {
+    "error": null,
+    "latency_ms": 1138.0,
+    "raw_output": "{\"model\": \"Huawei P60 Pro\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4815mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "36fc5c3f028eb3cd": {
+    "error": null,
+    "latency_ms": 1008.4,
+    "raw_output": "{\"model\": \"Google Pixel 8 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP dual\", \"battery\": \"5050mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "39dab5e3b7ba90d5": {
+    "error": null,
+    "latency_ms": 750.9,
+    "raw_output": "{\"model\": \"Samsung Galaxy Z Flip5\", \"storage\": \"256GB\", \"camera\": \"12MP dual\", \"battery\": \"3700mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "3db01003419462ae": {
+    "error": null,
+    "latency_ms": 842.3,
+    "raw_output": "{\"model\": \"Fairphone 5\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"4200mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "3de98f114ad68d35": {
+    "error": null,
+    "latency_ms": 1272.9,
+    "raw_output": "{\"storage\": \"256GB\", \"year\": 2024}",
+    "wait_ms": 46000.0
+  },
+  "3fdb6dbf32fabc4a": {
+    "error": null,
+    "latency_ms": 1827.7,
+    "raw_output": "{\"model\": \"Google Pixel 8 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP dual\", \"battery\": \"5050mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "411e85d242599b3b": {
+    "error": null,
+    "latency_ms": 758.7,
+    "raw_output": "{\"model\": \"Google Pixel 7\", \"storage\": \"128GB\", \"camera\": \"50MP dual\", \"battery\": \"4355mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "4498bfabfbc89799": {
+    "error": null,
+    "latency_ms": 1111.8,
+    "raw_output": "{\"model\": \"iPhone 15 Pro Max\", \"camera\": \"48MP\", \"battery\": \"4441mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "468bb65644f878fd": {
+    "error": null,
+    "latency_ms": 1030.3,
+    "raw_output": "{\"model\": \"Samsung Galaxy Z Flip5\", \"storage\": \"256GB\", \"camera\": \"12MP dual\", \"battery\": \"3700mAh\"}",
+    "wait_ms": 0.0
+  },
+  "4a94920d532a07e9": {
+    "error": null,
+    "latency_ms": 890.7,
+    "raw_output": "{\"model\": \"Xiaomi 14 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP Leica\", \"battery\": \"4880mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "4b2ae95fa96ec2ad": {
+    "error": null,
+    "latency_ms": 1047.8,
+    "raw_output": "{\"model\": \"Nothing Phone (2)\", \"storage\": \"128GB\", \"camera\": \"50MP dual\", \"battery\": \"4700mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "4b9d3c9c8b78edd4": {
+    "error": null,
+    "latency_ms": 914.0,
+    "raw_output": "{\"model\": \"iPhone\", \"storage\": \"256GB\"}",
+    "wait_ms": 0.0
+  },
+  "4d880e4a9bf3c382": {
+    "error": null,
+    "latency_ms": 2131.8,
+    "raw_output": "{\"model\": \"Sony Xperia 1 V\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"5000mAh\"}",
+    "wait_ms": 0.0
+  },
+  "5073748a7ded5fdb": {
+    "error": null,
+    "latency_ms": 1433.3,
+    "raw_output": "{\"model\": \"Google Pixel 8 Pro\", \"camera\": \"50MP dual\", \"battery\": \"5050mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "511949765bebc4ed": {
+    "error": null,
+    "latency_ms": 1623.2,
+    "raw_output": "{\"model\": \"Nothing Phone (2a)\", \"storage\": \"256GB\", \"camera\": \"50MP dual\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "547b955eec337f46": {
+    "error": null,
+    "latency_ms": 2570.2,
+    "raw_output": "{\"model\": \"iPhone 15 Pro Max\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4441mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "5493f337d1c18b3f": {
+    "error": null,
+    "latency_ms": 1055.9,
+    "raw_output": "{\"model\": \"Vivo V30 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP Zeiss\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "555043e1b192970f": {
+    "error": null,
+    "latency_ms": 1429.3,
+    "raw_output": "{\"model\": \"Honor Magic6 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5600mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "57f574244187cf09": {
+    "error": null,
+    "latency_ms": 1010.2,
+    "raw_output": "{\"model\": \"Google Pixel 5\", \"storage\": \"128GB\", \"camera\": \"12.2MP dual\", \"battery\": \"4080mAh\", \"year\": 2020}",
+    "wait_ms": 0.0
+  },
+  "57f72043fa6435d3": {
+    "error": null,
+    "latency_ms": 2227.1,
+    "raw_output": "{\"model\": \"iPhone 14\", \"storage\": \"128GB\", \"camera\": \"12MP dual\", \"battery\": \"3279mAh\"}",
+    "wait_ms": 0.0
+  },
+  "5a1f8fc32bb16da5": {
+    "error": null,
+    "latency_ms": 1290.8,
+    "raw_output": "{\"model\": \"Google Pixel Fold\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4821mAh\"}",
+    "wait_ms": 0.0
+  },
+  "5a8230a25b8f5853": {
+    "error": null,
+    "latency_ms": 1393.6,
+    "raw_output": "{\"model\": \"Nokia G42 5G\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 37000.0
+  },
+  "5ba7b6685143e38f": {
+    "error": null,
+    "latency_ms": 2000.9,
+    "raw_output": "{\"model\": \"Galaxy S24\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"4000mAh\", \"year\": 2024}",
+    "wait_ms": 33000.0
+  },
+  "5cba5dc34f5a4f30": {
+    "error": null,
+    "latency_ms": 816.5,
+    "raw_output": "{\"model\": \"Nothing Phone (2)\", \"camera\": \"50MP dual\", \"battery\": \"4700mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "5f2398d1afe7c918": {
+    "error": null,
+    "latency_ms": 1174.4,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "626c8581bb5e0631": {
+    "error": null,
+    "latency_ms": 818.3,
+    "raw_output": "{\"model\": \"OnePlus Nord 3\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\"}",
+    "wait_ms": 0.0
+  },
+  "62d31400cc2d665b": {
+    "error": null,
+    "latency_ms": 681.4,
+    "raw_output": "{\"model\": \"Fairphone 5\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"4200mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "633df365eb1d9c77": {
+    "error": null,
+    "latency_ms": 786.6,
+    "raw_output": "{\"model\": \"Tecno Camon 30 Premier\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "64863385a8a81676": {
+    "error": null,
+    "latency_ms": 1192.2,
+    "raw_output": "{\"model\": \"Oppo Find X7 Ultra\", \"storage\": \"512GB\", \"camera\": \"50MP Hasselblad\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "64e8f2a7051f2ac1": {
+    "error": null,
+    "latency_ms": 920.2,
+    "raw_output": "{\"model\": \"Realme GT 5 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5400mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "6665b255049473f8": {
+    "error": null,
+    "latency_ms": 790.2,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "66e2e50e5bd2895d": {
+    "error": null,
+    "latency_ms": 2004.9,
+    "raw_output": "{\"model\": \"OnePlus 11\", \"storage\": \"256GB\", \"camera\": \"50MP Hasselblad\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "6708fc1be4d45fbd": {
+    "error": null,
+    "latency_ms": 1240.5,
+    "raw_output": "{\"model\": \"Nokia G42 5G\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\"}",
+    "wait_ms": 0.0
+  },
+  "697fdff2b7d256bb": {
+    "error": null,
+    "latency_ms": 1627.3,
+    "raw_output": "{\"model\": \"Motorola Moto G84\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "6b492e8e02f878b7": {
+    "error": null,
+    "latency_ms": 2575.2,
+    "raw_output": "{\"model\": \"Samsung Galaxy A55\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "6e42a7bc009cd9a5": {
+    "error": null,
+    "latency_ms": 798.5,
+    "raw_output": "{\"model\": \"iPhone 16 Pro\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"3582mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "700d81d20d24f2c1": {
+    "error": null,
+    "latency_ms": 1445.6,
+    "raw_output": "{\"camera\": \"50MP\"}",
+    "wait_ms": 0.0
+  },
+  "7021cf55ec612b61": {
+    "error": null,
+    "latency_ms": 5631.8,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "70d320e3d432ba0b": {
+    "error": null,
+    "latency_ms": 3983.9,
+    "raw_output": "{\"model\": \"Sony Xperia 1 V\", \"storage\": \"256GB\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "70f8d7efa31c1570": {
+    "error": null,
+    "latency_ms": 1072.6,
+    "raw_output": "{\"model\": \"Samsung Galaxy A55\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "70f957760ee494da": {
+    "error": null,
+    "latency_ms": 1156.0,
+    "raw_output": "{\"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5400mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "717f649bd7f8e40f": {
+    "error": null,
+    "latency_ms": 1843.4,
+    "raw_output": "{\"model\": \"Motorola Razr 40 Ultra\", \"storage\": \"512GB\", \"camera\": \"12MP\", \"battery\": \"3800mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "7241f26bc594590a": {
+    "error": null,
+    "latency_ms": 1264.6,
+    "raw_output": "{\"storage\": \"256GB\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "72e31732789ae0d7": {
+    "error": null,
+    "latency_ms": 5416.4,
+    "raw_output": "{\"model\": \"Google Pixel Fold\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4821mAh\", \"year\": 2023}",
+    "wait_ms": 52000.0
+  },
+  "7340fdef38d43dd8": {
+    "error": null,
+    "latency_ms": 1376.4,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "742a30baeaa21c8e": {
+    "error": null,
+    "latency_ms": 701.4,
+    "raw_output": "{\"model\": \"Realme GT 5 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "754eb4b395e50158": {
+    "error": null,
+    "latency_ms": 1134.5,
+    "raw_output": "{\"model\": \"Google Pixel 8 Pro\", \"camera\": \"50MP dual\", \"battery\": \"5050mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "76b2e340d5e58d50": {
+    "error": null,
+    "latency_ms": 3690.2,
+    "raw_output": "{\"model\": \"OnePlus Nord 3\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "77dd33a6916b8d10": {
+    "error": null,
+    "latency_ms": 1756.3,
+    "raw_output": "{\"model\": \"Google Pixel Fold\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4821mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "79718d7888f00c78": {
+    "error": null,
+    "latency_ms": 1516.2,
+    "raw_output": "{\"model\": \"OnePlus Nord 3\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "7a6e1356c70043fa": {
+    "error": null,
+    "latency_ms": 675.0,
+    "raw_output": "{\"model\": \"Xiaomi 14 Pro\", \"camera\": \"50MP Leica\", \"battery\": \"4880mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "7ad8e2cf9613940f": {
+    "error": null,
+    "latency_ms": 942.8,
+    "raw_output": "{\"model\": \"iPhone 14\", \"storage\": \"128GB\", \"camera\": \"12MP dual\", \"battery\": \"3279mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "7f058a6a49cebc20": {
+    "error": null,
+    "latency_ms": 737.5,
+    "raw_output": "{\"model\": \"Galaxy S24\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"4000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "7f2569a0b65b28f8": {
+    "error": null,
+    "latency_ms": 918.3,
+    "raw_output": "{\"model\": \"Fairphone 5\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"4200mAh\"}",
+    "wait_ms": 0.0
+  },
+  "80f535ee17b9c16b": {
+    "error": null,
+    "latency_ms": 825.9,
+    "raw_output": "{\"model\": \"Xiaomi 13T Pro\", \"storage\": \"512GB\", \"camera\": \"50MP Leica\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "81991d386105d5f5": {
+    "error": null,
+    "latency_ms": 634.2,
+    "raw_output": "{\"model\": \"Fairphone 4\", \"storage\": \"256GB\", \"camera\": \"48MP dual\", \"battery\": \"3905mAh\", \"year\": 2021}",
+    "wait_ms": 0.0
+  },
+  "819d8ed6ddac5c2d": {
+    "error": null,
+    "latency_ms": 930.4,
+    "raw_output": "{\"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5050mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "830e5704e4addee4": {
+    "error": null,
+    "latency_ms": 792.4,
+    "raw_output": "{\"model\": \"Samsung Galaxy Z Flip5\", \"storage\": \"256GB\", \"camera\": \"12MP dual\", \"battery\": \"3700mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "8476bf5ea01ca4c2": {
+    "error": null,
+    "latency_ms": 1647.9,
+    "raw_output": "{\"model\": \"Unnamed midrange unit\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "85961c799cba1e0c": {
+    "error": null,
+    "latency_ms": 1166.4,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "85c08198ce80099c": {
+    "error": null,
+    "latency_ms": 658.9,
+    "raw_output": "{\"model\": \"Google Pixel 7a\", \"storage\": \"128GB\", \"camera\": \"64MP dual\", \"battery\": \"4385mAh\"}",
+    "wait_ms": 0.0
+  },
+  "88b3fde2e95f22b4": {
+    "error": null,
+    "latency_ms": 817.6,
+    "raw_output": "{\"model\": \"Honor X9b\", \"storage\": \"256GB\", \"camera\": \"108MP\", \"battery\": \"5800mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "8a074d86b847cfe2": {
+    "error": null,
+    "latency_ms": 1394.8,
+    "raw_output": "{\"battery\": \"4500mAh\"}",
+    "wait_ms": 0.0
+  },
+  "8a26ea9a6b1821d1": {
+    "error": null,
+    "latency_ms": 690.3,
+    "raw_output": "{\"model\": \"Apple iPhone 14\", \"storage\": \"128GB\", \"camera\": \"12MP dual\", \"battery\": \"3279mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "8d2a7d1382c1088d": {
+    "error": null,
+    "latency_ms": 1638.4,
+    "raw_output": "{\"model\": \"OnePlus Open\", \"storage\": \"512GB\", \"camera\": \"48MP\", \"battery\": \"4805mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "8dfd0b457f65e5a9": {
+    "error": null,
+    "latency_ms": 1959.7,
+    "raw_output": "{\"model\": \"Nothing Phone (1)\", \"storage\": \"256GB\", \"camera\": \"50MP dual\", \"battery\": \"4500mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "90944030a819d8d6": {
+    "error": null,
+    "latency_ms": 724.1,
+    "raw_output": "{\"model\": \"Nokia G42 5G\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "9123aebe85bfff10": {
+    "error": null,
+    "latency_ms": 534.4,
+    "raw_output": "{\"model\": \"Tecno Camon 30 Premier\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "91d0568a00208a62": {
+    "error": null,
+    "latency_ms": 1322.4,
+    "raw_output": "{\"model\": \"Google Pixel 7a\", \"storage\": \"128GB\", \"camera\": \"64MP dual\", \"battery\": \"4385mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "928c6fcc9b6e7476": {
+    "error": null,
+    "latency_ms": 1686.5,
+    "raw_output": "{\"model\": \"ASUS Zenfone 10\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"4300mAh\"}",
+    "wait_ms": 0.0
+  },
+  "941e309aac7e9a41": {
+    "error": null,
+    "latency_ms": 1002.4,
+    "raw_output": "{\"model\": \"Samsung Galaxy S23\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"3900mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "9644c7836d7d79d9": {
+    "error": null,
+    "latency_ms": 719.4,
+    "raw_output": "{\"model\": \"Nothing Phone (2)\", \"storage\": \"128GB\", \"camera\": \"50MP dual\", \"battery\": \"4700mAh\"}",
+    "wait_ms": 0.0
+  },
+  "9a252708510aebf2": {
+    "error": null,
+    "latency_ms": 8582.2,
+    "raw_output": "{\"model\": \"Google Pixel 8 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP dual\", \"battery\": \"5050mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "9aa5f09d9f952f30": {
+    "error": null,
+    "latency_ms": 3418.7,
+    "raw_output": "{\"model\": \"Huawei P60 Pro\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4815mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "9bef9f6431298191": {
+    "error": null,
+    "latency_ms": 1340.5,
+    "raw_output": "{\"model\": \"Samsung Galaxy S24 Ultra\", \"camera\": \"200MP main\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "9d6dbf7535b5fbe8": {
+    "error": null,
+    "latency_ms": 4277.5,
+    "raw_output": "{\"model\": \"ASUS Zenfone 10\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"4300mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "9de162cc0ff121a0": {
+    "error": null,
+    "latency_ms": 661.0,
+    "raw_output": "{\"model\": \"ASUS Zenfone 10\", \"storage\": \"128GB\", \"battery\": \"4300mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "a0a18fd532248d63": {
+    "error": null,
+    "latency_ms": 902.0,
+    "raw_output": "{\"model\": \"OnePlus 12\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5400mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "a0abd8ea189ee081": {
+    "error": null,
+    "latency_ms": 1891.1,
+    "raw_output": "{}",
+    "wait_ms": 43000.0
+  },
+  "a1a46e7253c2a556": {
+    "error": null,
+    "latency_ms": 1317.9,
+    "raw_output": "{\"model\": \"Apple iPhone 15 Pro Max\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4441mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "a2e89ee4e796175c": {
+    "error": null,
+    "latency_ms": 1047.7,
+    "raw_output": "{\"model\": \"Vivo V30 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP Zeiss\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "a360f9834d9802a0": {
+    "error": null,
+    "latency_ms": 2511.6,
+    "raw_output": "{\"model\": \"Google Pixel 8\", \"storage\": \"128GB\", \"camera\": \"50MP dual\", \"battery\": \"4575mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "a47bba53caba473e": {
+    "error": null,
+    "latency_ms": 930.8,
+    "raw_output": "{\"model\": \"Realme GT 5 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5400mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "a4bf670b31c144ed": {
+    "error": null,
+    "latency_ms": 953.1,
+    "raw_output": "{\"model\": \"iPhone 13 Pro Max\", \"storage\": \"512GB\", \"camera\": \"12MP triple\", \"battery\": \"4352mAh\", \"year\": 2021}",
+    "wait_ms": 0.0
+  },
+  "a56bb056c8b78f4d": {
+    "error": null,
+    "latency_ms": 1698.2,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "a5c19a1bc29f280d": {
+    "error": null,
+    "latency_ms": 1599.9,
+    "raw_output": "{\"model\": \"Samsung Galaxy Z Fold5\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"4400mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "a5ea2a2de44a5b56": {
+    "error": null,
+    "latency_ms": 1450.5,
+    "raw_output": "{\"model\": \"Xiaomi Redmi Note 13 Pro\", \"storage\": \"256GB\", \"camera\": \"200MP\", \"battery\": \"5100mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "a7f219c3dc3315bc": {
+    "error": null,
+    "latency_ms": 1239.2,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "a87a0030c107684a": {
+    "error": null,
+    "latency_ms": 1023.9,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "a900c619aeaede44": {
+    "error": null,
+    "latency_ms": 1628.9,
+    "raw_output": "{\"model\": \"Realme Narzo 60 Pro\", \"storage\": \"256GB\", \"camera\": \"100MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "aa0b988569d15d17": {
+    "error": null,
+    "latency_ms": 3008.7,
+    "raw_output": "{\"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4441mAh\", \"year\": 2023}",
+    "wait_ms": 37000.0
+  },
+  "aad99bea289dac7e": {
+    "error": null,
+    "latency_ms": 752.4,
+    "raw_output": "{\"model\": \"Vivo Y100\", \"storage\": \"256GB\", \"camera\": \"64MP\", \"battery\": \"4500mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "aaeecac13a3e7ef3": {
+    "error": null,
+    "latency_ms": 1095.9,
+    "raw_output": "{\"model\": \"Nokia XR21\", \"storage\": \"128GB\", \"camera\": \"64MP\", \"battery\": \"4800mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "aed4426880a0b9bc": {
+    "error": null,
+    "latency_ms": 985.8,
+    "raw_output": "{\"model\": \"Google Pixel 8 Pro\"}",
+    "wait_ms": 0.0
+  },
+  "aee7cc9e71f54240": {
+    "error": null,
+    "latency_ms": 1804.9,
+    "raw_output": "{\"model\": \"Apple iPhone 11\", \"storage\": \"128GB\", \"camera\": \"12MP dual\", \"battery\": \"3110mAh\", \"year\": 2019}",
+    "wait_ms": 0.0
+  },
+  "af80cbf07228c606": {
+    "error": null,
+    "latency_ms": 709.4,
+    "raw_output": "{\"storage\": \"128GB\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "b2852c58085437e1": {
+    "error": null,
+    "latency_ms": 1187.9,
+    "raw_output": "{\"model\": \"Vivo X100 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP Zeiss\", \"battery\": \"5400mAh\"}",
+    "wait_ms": 0.0
+  },
+  "b3767443be919dff": {
+    "error": null,
+    "latency_ms": 803.5,
+    "raw_output": "{\"model\": \"Honor Magic6 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5600mAh\"}",
+    "wait_ms": 0.0
+  },
+  "b456359dbfbce304": {
+    "error": null,
+    "latency_ms": 1088.6,
+    "raw_output": "{\"model\": \"Realme 12 Pro+\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "b6ca771e3f69e2c3": {
+    "error": null,
+    "latency_ms": 730.2,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "b73920959eeab47c": {
+    "error": null,
+    "latency_ms": 768.4,
+    "raw_output": "{\"camera\": \"50MP\"}",
+    "wait_ms": 0.0
+  },
+  "b7fef44db846e69d": {
+    "error": null,
+    "latency_ms": 874.2,
+    "raw_output": "{\"model\": \"Asus ROG Phone 8\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5500mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "ba9f5ef80a6bac45": {
+    "error": null,
+    "latency_ms": 680.3,
+    "raw_output": "{\"model\": \"Apple iPhone 13 Pro Max\", \"storage\": \"512GB\", \"camera\": \"12MP triple\", \"battery\": \"4352mAh\", \"year\": 2021}",
+    "wait_ms": 0.0
+  },
+  "baff591c71b5f796": {
+    "error": null,
+    "latency_ms": 934.7,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "bc059c70f81ccc14": {
+    "error": null,
+    "latency_ms": 1051.5,
+    "raw_output": "{\"model\": \"Motorola Edge 30 Ultra\", \"storage\": \"256GB\", \"camera\": \"200MP\", \"battery\": \"4610mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "bcacffbb90c6cbc5": {
+    "error": null,
+    "latency_ms": 1007.1,
+    "raw_output": "{\"model\": \"OnePlus 12\", \"storage\": \"256GB\", \"camera\": \"50MP triple\", \"battery\": \"5400mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "bde22dd835e6999c": {
+    "error": null,
+    "latency_ms": 674.9,
+    "raw_output": "{\"model\": \"Oppo Find X7 Ultra\", \"storage\": \"512GB\", \"camera\": \"50MP Hasselblad\", \"battery\": \"5000mAh\"}",
+    "wait_ms": 0.0
+  },
+  "be8996e6ccafb832": {
+    "error": null,
+    "latency_ms": 1646.4,
+    "raw_output": "{\"storage\": \"256GB\", \"camera\": \"50MP dual\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "bed268cabfab681d": {
+    "error": null,
+    "latency_ms": 1326.4,
+    "raw_output": "{\"storage\": \"128GB\", \"camera\": \"48MP\", \"battery\": \"4500mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "bf4cc0d1f8268eff": {
+    "error": null,
+    "latency_ms": 2141.0,
+    "raw_output": "{\"storage\": \"128GB\", \"camera\": \"12MP\", \"battery\": \"4000mAh\", \"year\": 2022}",
+    "wait_ms": 32000.0
+  },
+  "c283eb0e342452af": {
+    "error": null,
+    "latency_ms": 1539.5,
+    "raw_output": "{\"model\": \"iPhone SE (3rd generation)\", \"storage\": \"128GB\", \"camera\": \"12MP\", \"battery\": \"2018mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "c329b2c9a711659b": {
+    "error": null,
+    "latency_ms": 2709.4,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "c32adb8d21bddb36": {
+    "error": null,
+    "latency_ms": 5256.3,
+    "raw_output": "{\"year\": 2024}",
+    "wait_ms": 12000.0
+  },
+  "c40911f5bd458366": {
+    "error": null,
+    "latency_ms": 1074.9,
+    "raw_output": "{\"model\": \"Samsung Galaxy S23\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"3900mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "c44fb7142881d4ac": {
+    "error": null,
+    "latency_ms": 1245.6,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "c6dd08630f04a81e": {
+    "error": null,
+    "latency_ms": 1141.2,
+    "raw_output": "{\"model\": \"Motorola Edge 40 Neo\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\"}",
+    "wait_ms": 0.0
+  },
+  "c72ba56f11d40cd3": {
+    "error": null,
+    "latency_ms": 609.7,
+    "raw_output": "{\"model\": \"Motorola Edge 40 Neo\", \"storage\": \"256GB\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "c7cd4c62a950203e": {
+    "error": null,
+    "latency_ms": 943.8,
+    "raw_output": "{\"model\": \"Samsung Galaxy A55\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\"}",
+    "wait_ms": 0.0
+  },
+  "c80ae3e58dafedda": {
+    "error": null,
+    "latency_ms": 1000.6,
+    "raw_output": "{\"model\": \"Google Pixel 7a\"}",
+    "wait_ms": 0.0
+  },
+  "caeee603b9020403": {
+    "error": null,
+    "latency_ms": 1127.7,
+    "raw_output": "{\"model\": \"iPhone 15 Pro Max\", \"camera\": \"48MP\", \"battery\": \"4441mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "cce869f7f9ab8970": {
+    "error": null,
+    "latency_ms": 624.4,
+    "raw_output": "{\"model\": \"Xiaomi Redmi Note 13 Pro\", \"storage\": \"256GB\", \"camera\": \"200MP\", \"battery\": \"5100mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "cda574ce4966bc2b": {
+    "error": null,
+    "latency_ms": 713.5,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "ce3f014321cf7e7d": {
+    "error": null,
+    "latency_ms": 1531.2,
+    "raw_output": "{\"model\": \"Motorola Razr 40 Ultra\", \"storage\": \"512GB\", \"camera\": \"12MP\", \"battery\": \"3800mAh\"}",
+    "wait_ms": 0.0
+  },
+  "cf273e1d66b9a288": {
+    "error": null,
+    "latency_ms": 1035.3,
+    "raw_output": "{\"model\": \"Motorola Moto G84\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "d14a932bf6ae59bc": {
+    "error": null,
+    "latency_ms": 567.1,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "d1db18af79519742": {
+    "error": null,
+    "latency_ms": 1690.4,
+    "raw_output": "{\"model\": \"Vivo X100 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP Zeiss\", \"year\": 2023}",
+    "wait_ms": 36000.0
+  },
+  "d2019a7493bc7754": {
+    "error": null,
+    "latency_ms": 1839.6,
+    "raw_output": "{\"model\": \"Xiaomi 14 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"4880mAh\"}",
+    "wait_ms": 0.0
+  },
+  "d341206e8c23e95c": {
+    "error": null,
+    "latency_ms": 780.3,
+    "raw_output": "{\"model\": \"Oppo Find X7 Ultra\", \"storage\": \"512GB\", \"camera\": \"50MP Hasselblad\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "d6b1602128ccbf48": {
+    "error": null,
+    "latency_ms": 770.1,
+    "raw_output": "{\"model\": \"Sony Xperia 5 V\", \"storage\": \"128GB\", \"camera\": \"48MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "d6b607838c1349ba": {
+    "error": null,
+    "latency_ms": 2566.4,
+    "raw_output": "{\"model\": \"Fairphone 5\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "d7596eea4d222e36": {
+    "error": null,
+    "latency_ms": 1119.0,
+    "raw_output": "{\"model\": \"Sony Xperia 5 V\", \"storage\": \"128GB\", \"camera\": \"48MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "d7d7769041962d52": {
+    "error": null,
+    "latency_ms": 679.6,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "d838d5665ff8b8ac": {
+    "error": null,
+    "latency_ms": 1190.5,
+    "raw_output": "{\"model\": \"Oppo Reno11 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"4600mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "d83e06140a68a9fc": {
+    "error": null,
+    "latency_ms": 1190.3,
+    "raw_output": "{\"model\": \"OnePlus 11\", \"storage\": \"256GB\", \"camera\": \"50MP Hasselblad\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 39000.0
+  },
+  "dacbcb01edfa9a59": {
+    "error": null,
+    "latency_ms": 1549.4,
+    "raw_output": "{\"model\": \"Honor Magic6 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5600mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "dd5c423dee446538": {
+    "error": null,
+    "latency_ms": 870.4,
+    "raw_output": "{\"model\": \"Vivo X100 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP Zeiss\", \"battery\": \"5400mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "df2684346cbef771": {
+    "error": null,
+    "latency_ms": 733.4,
+    "raw_output": "{\"model\": \"Sony Xperia 1 V\", \"storage\": \"256GB\", \"camera\": \"48MP triple\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "e28f1228bf56c134": {
+    "error": null,
+    "latency_ms": 6563.4,
+    "raw_output": "{\"model\": \"iPhone 15 Pro Max\", \"storage\": \"256GB\", \"camera\": \"48MP\", \"battery\": \"4441mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "e336808ce444c3ff": {
+    "error": null,
+    "latency_ms": 927.1,
+    "raw_output": "{\"model\": \"Xiaomi POCO F6 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "e355640f13a24763": {
+    "error": null,
+    "latency_ms": 5484.2,
+    "raw_output": "{\"model\": \"Oppo Reno11 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"4600mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "e36a345067bccd1c": {
+    "error": null,
+    "latency_ms": 2138.9,
+    "raw_output": "{\"model\": \"Samsung Galaxy S24 Ultra\", \"camera\": \"200MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "e3839ee724f3b03d": {
+    "error": null,
+    "latency_ms": 1026.9,
+    "raw_output": "{\"model\": \"Xiaomi 14 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP Leica\", \"battery\": \"4880mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "e39095b1f0807d18": {
+    "error": null,
+    "latency_ms": 835.2,
+    "raw_output": "{\"model\": \"Xiaomi 14 Pro\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "e4c324d5267e6362": {
+    "error": null,
+    "latency_ms": 1490.0,
+    "raw_output": "{\"model\": \"Motorola Edge 40 Neo\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "e7043ce349ad6937": {
+    "error": null,
+    "latency_ms": 2474.1,
+    "raw_output": "{\"model\": \"Realme 12 Pro+\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "e72eda9f590fd562": {
+    "error": null,
+    "latency_ms": 6343.8,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "e9defb640e324716": {
+    "error": null,
+    "latency_ms": 1301.6,
+    "raw_output": "{\"model\": \"Google Pixel 8\", \"storage\": \"128GB\", \"camera\": \"50MP dual\", \"battery\": \"4575mAh\", \"year\": 2023}",
+    "wait_ms": 42000.0
+  },
+  "eaa80aa4bd31ac13": {
+    "error": null,
+    "latency_ms": 2268.2,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "ec9285388a79691c": {
+    "error": null,
+    "latency_ms": 1001.8,
+    "raw_output": "{\"model\": \"Google Pixel 9 Pro\", \"storage\": \"256GB\", \"camera\": \"50MP\", \"battery\": \"5050mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "ed006f1abf75e168": {
+    "error": null,
+    "latency_ms": 4462.3,
+    "raw_output": "{\"model\": \"iPhone 14\", \"storage\": \"128GB\", \"camera\": \"12MP dual\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "ef2edd1c7b7a1f34": {
+    "error": null,
+    "latency_ms": 1230.6,
+    "raw_output": "{\"storage\": \"512GB\", \"camera\": \"200MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "f05ad311c1b594dd": {
+    "error": null,
+    "latency_ms": 835.5,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "f0fffbc51e967707": {
+    "error": null,
+    "latency_ms": 1330.0,
+    "raw_output": "{\"camera\": \"50MP\", \"battery\": \"5000mAh\"}",
+    "wait_ms": 0.0
+  },
+  "f5f3efec086fc915": {
+    "error": null,
+    "latency_ms": 2675.8,
+    "raw_output": "{}",
+    "wait_ms": 0.0
+  },
+  "f64b667d30338dee": {
+    "error": null,
+    "latency_ms": 1060.4,
+    "raw_output": "{\"model\": \"Google Pixel 6a\", \"storage\": \"128GB\", \"camera\": \"12.2MP dual\", \"battery\": \"4410mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "f6f607e085726513": {
+    "error": null,
+    "latency_ms": 1050.1,
+    "raw_output": "{\"model\": \"Google Pixel 8 Pro\"}",
+    "wait_ms": 0.0
+  },
+  "f8ac9d89f6dd02d9": {
+    "error": null,
+    "latency_ms": 1311.9,
+    "raw_output": "{\"storage\": \"512GB\", \"camera\": \"200MP\", \"battery\": \"5000mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  },
+  "fa48845701945bbe": {
+    "error": null,
+    "latency_ms": 2769.0,
+    "raw_output": "{\"model\": \"Xiaomi 13T Pro\", \"storage\": \"512GB\", \"camera\": \"50MP Leica\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 44000.0
+  },
+  "fa64976d4e338b81": {
+    "error": null,
+    "latency_ms": 828.2,
+    "raw_output": "{\"model\": \"Google Pixel 7\", \"storage\": \"128GB\", \"camera\": \"50MP dual\", \"battery\": \"4355mAh\", \"year\": 2022}",
+    "wait_ms": 0.0
+  },
+  "fc20ad1d3617abae": {
+    "error": null,
+    "latency_ms": 2149.0,
+    "raw_output": "{\"model\": \"Motorola Razr 40 Ultra\", \"storage\": \"512GB\", \"camera\": \"12MP\", \"battery\": \"3800mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "fcc90253cc27ac54": {
+    "error": null,
+    "latency_ms": 2927.0,
+    "raw_output": "{\"model\": \"Sony Xperia 1 V\", \"storage\": \"256GB\", \"camera\": \"48MP triple\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "fda20d9208757ef6": {
+    "error": null,
+    "latency_ms": 1313.0,
+    "raw_output": "{\"model\": \"Google Pixel 7a\", \"storage\": \"128GB\", \"battery\": \"4385mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "fdca9020fd7d4ac9": {
+    "error": null,
+    "latency_ms": 1164.8,
+    "raw_output": "{\"model\": \"Oppo A79 5G\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "fe5324b606210523": {
+    "error": null,
+    "latency_ms": 872.3,
+    "raw_output": "{\"model\": \"Honor 90\", \"storage\": \"512GB\", \"camera\": \"200MP\", \"battery\": \"5000mAh\", \"year\": 2023}",
+    "wait_ms": 0.0
+  },
+  "ff62bd76957282a9": {
+    "error": null,
+    "latency_ms": 900.1,
+    "raw_output": "{\"model\": \"ASUS Zenfone 10\", \"storage\": \"128GB\", \"camera\": \"50MP\", \"battery\": \"4300mAh\"}",
+    "wait_ms": 0.0
+  },
+  "fffbaf498ab173b3": {
+    "error": null,
+    "latency_ms": 1352.8,
+    "raw_output": "{\"model\": \"Honor Magic6 Pro\", \"storage\": \"512GB\", \"camera\": \"50MP\", \"battery\": \"5600mAh\", \"year\": 2024}",
+    "wait_ms": 0.0
+  }
+}

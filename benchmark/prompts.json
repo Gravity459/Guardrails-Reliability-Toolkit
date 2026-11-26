@@ -616,7 +616,7 @@
     "prompt": "Parse as JSON: In 2019, Apple released the iPhone 11 with 128GB storage, a 12MP dual camera, and a 3110mAh battery. Extract model, storage, camera, battery, year.",
     "expected_failure": "none",
     "answer": {
-      "model": "iPhone 11",
+      "model": "Apple iPhone 11",
       "storage": "128GB",
       "camera": "12MP dual",
       "battery": "3110mAh",

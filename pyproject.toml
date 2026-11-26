@@ -11,6 +11,8 @@ dependencies = [
     "pydantic>=2.14.4",
     "python-dotenv>=1.2.4",
     "google-genai>=3.6.1",
+    "guardrails-ai-valid-length>=0.1.0",
+    "guardrails-ai-valid-range>=0.1.0",
 ]
 
 [dependency-groups]
@@ -32,7 +34,4 @@ filterwarnings = [
     "ignore::DeprecationWarning:typer.*",
     # guardrails' own tracing code calls its deprecated to_dict() on every guard run.
     "ignore:Use .* instead:DeprecationWarning:guardrails.telemetry.*",
-    # guardrails' custom-LLM wrapper warns about its own temperature default;
-    # call_llm does not use temperature, so this has no effect on our calls.
-    "ignore:The default value of 0 for temperature:DeprecationWarning:guardrails.*",
 ]
