@@ -82,6 +82,13 @@ def test_refresh_ignores_cache(tmp_path):
     assert call.call_count == 2
 
 
+def test_cache_file_name_uses_single_underscore(tmp_path):
+    path = run_utils.cache_path("baseline", "gemini-3.5-flash-lite", tmp_path)
+    assert path.name == "baseline_gemini-3.5-flash-lite.json"
+    # Matches the cache files committed in the repo.
+    assert (run_utils.CACHE_DIR / path.name).exists()
+
+
 def test_cache_key_changes_with_system_prompt():
     before = run_utils.cache_key("same prompt")
     with patch.object(run_utils, "SYSTEM_PROMPT", SYSTEM_PROMPT + " changed"):

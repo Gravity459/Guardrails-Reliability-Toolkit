@@ -2,7 +2,7 @@
 
 Runners only record what the model returned. Grading happens in scorer.py.
 
-Cache: benchmark/cache/<strategy>__<model>.json maps a hash of
+Cache: benchmark/cache/<strategy>_<model>.json maps a hash of
 (system prompt, prompt text, temperature[, cache_salt]) to the saved response,
 so reruns don't call Gemini again. Changing the system prompt changes every key.
 The guarded runner passes a hash of its guard code as cache_salt, so changing a
@@ -62,7 +62,7 @@ def files_hash(*paths: Path) -> str:
 
 def cache_path(strategy: str, model: str | None, cache_dir: Path = CACHE_DIR) -> Path:
     safe_model = re.sub(r"[^A-Za-z0-9._-]", "_", model or "unknown")
-    return cache_dir / f"{strategy}__{safe_model}.json"
+    return cache_dir / f"{strategy}_{safe_model}.json"
 
 
 def _read_json(path: Path) -> dict:
