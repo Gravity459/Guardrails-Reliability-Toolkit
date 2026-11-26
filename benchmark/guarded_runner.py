@@ -23,10 +23,14 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from app import guarded_call_llm  # noqa: E402
-from benchmark.run_utils import TEMPERATURE, run_benchmark  # noqa: E402
+from benchmark.run_utils import TEMPERATURE, files_hash, run_benchmark  # noqa: E402
 
 RESULTS_PATH = BENCHMARK_DIR / "results_guarded.json"
 MODEL = os.getenv("LLM_PRIMARY_MODEL")
+# Part of every guarded cache key: editing the guard or its validators
+# means old cached guarded answers are not reused.
+GUARD_FILES = (ROOT / "app" / "guard.py", ROOT / "app" / "schemas" / "guarded_schema.py")
+GUARD_VERSION = files_hash(*GUARD_FILES)
 
 
 def call(prompt: str) -> dict:
@@ -41,7 +45,7 @@ def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--refresh", action="store_true", help="ignore the cache and call Gemini again")
     args = parser.parse_args(argv)
-    run_benchmark("guarded", call, MODEL, RESULTS_PATH, refresh=args.refresh)
+    run_benchmark("guarded", call, MODEL, RESULTS_PATH, refresh=args.refresh, cache_salt=GUARD_VERSION)
 
 
 if __name__ == "__main__":

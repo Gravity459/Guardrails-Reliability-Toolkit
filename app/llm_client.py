@@ -23,6 +23,10 @@ _MESSAGE_RETRY_RE = re.compile(r"retry in\s+(\d+(?:\.\d+)?)s", re.I)
 
 _sleep = time.sleep
 
+# Total seconds spent sleeping on 429s. The benchmark reads it before and
+# after each prompt so rate-limit waits don't count as model latency.
+rate_limit_wait_s = 0.0
+
 
 def _env_int(name: str, default: int) -> int:
     raw = os.getenv(name)
@@ -164,6 +168,7 @@ def call_llm(
         config_args["temperature"] = temperature
     config = types.GenerateContentConfig(**config_args) if config_args else None
 
+    global rate_limit_wait_s
     attempts = _env_int("LLM_RETRY_ATTEMPTS", _DEFAULT_ATTEMPTS)
     last_wait: float | None = None
     last_error: genai_errors.ClientError | None = None
@@ -188,6 +193,7 @@ def call_llm(
             last_wait = delay
             print(f"429: waiting {delay}s (RetryInfo)", flush=True)
             _sleep(delay)
+            rate_limit_wait_s += delay
 
     if last_error is not None:
         raise last_error

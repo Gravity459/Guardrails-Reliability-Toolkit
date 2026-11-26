@@ -4,7 +4,7 @@ __all__ = ["call_llm", "guarded_call_llm"]
 
 
 def __getattr__(name):
-    # Import the guard lazily: it needs the Guardrails Hub validators installed,
+    # Import the guard lazily: it loads Guardrails and its validators,
     # which the baseline runner, scorer and report don't need.
     if name == "guarded_call_llm":
         from .guard import guarded_call_llm

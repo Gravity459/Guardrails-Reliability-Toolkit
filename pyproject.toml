@@ -11,6 +11,8 @@ dependencies = [
     "pydantic>=2.14.4",
     "python-dotenv>=1.2.4",
     "google-genai>=3.6.1",
+    "guardrails-ai-valid-length>=0.1.0",
+    "guardrails-ai-valid-range>=0.1.0",
 ]
 
 [dependency-groups]

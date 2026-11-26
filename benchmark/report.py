@@ -30,7 +30,9 @@ METRICS = [
     ("schema_valid_pct", "Schema valid %", True),
     ("field_accuracy_pct", "Field accuracy %", True),
     ("exact_match_pct", "Exact match (all 5 fields) %", True),
-    ("hallucination_pct", "Hallucination % (null fields filled)", False),
+    ("hallucination_pct", "Hallucination % (null fields filled, usable outputs only)", False),
+    ("invalid_outputs", "Unusable outputs (count)", False),
+    ("guard_failed", "  of which guard_failed", False),
     ("correct_refusal_pct", "Correct refusal %", True),
     ("latency_p50_ms", "Latency p50 (ms)", False),
     ("latency_p95_ms", "Latency p95 (ms)", False),
@@ -62,6 +64,12 @@ def build_report(scores: dict[str, dict], metas: dict[str, dict]) -> str:
             f"{m.get('total')} prompts ({m.get('cached', 0)} from cache, "
             f"{m.get('llm_call_failed', 0)} LLM call failures)"
         )
+    for name, s in scores.items():
+        o = s["overall"]
+        lines.append(
+            f"- **{name} scored: {o['scored']}/{o['prompts']}** "
+            f"({o['llm_call_failed']} failed calls left out of every metric)"
+        )
     lines += ["", "## Overall", "", "| Metric | Baseline | Guarded | Change |", "| --- | --- | --- | --- |"]
     for key, label, higher in METRICS:
         b, g = base["overall"][key], guard["overall"][key]
@@ -91,6 +99,8 @@ def main() -> str:
     prompts = load_prompts()
     scores, metas = {}, {}
     for name, path in RUNS.items():
+        if not path.exists():
+            sys.exit(f"{path.name} not found. Run: uv run python -m benchmark.{name}_runner")
         with path.open(encoding="utf-8") as f:
             payload = json.load(f)
         metas[name] = payload.get("meta", {})

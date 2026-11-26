@@ -161,6 +161,22 @@ def test_by_failure_type_breakdown():
     assert by_type["empty input"]["correct_refusal_pct"] == 100.0
 
 
+def test_failed_calls_not_scored_but_guard_failed_is():
+    # #1: a failed call says nothing about the model -> left out of every metric.
+    # #5: guard_failed is a real outcome -> scored, and counted next to hallucination %.
+    results = _results([GOOD_JSON, None, None])
+    results[1]["error"] = "guard_failed"
+    results[2]["error"] = "llm_call_failed: 429 quota"
+    overall = score_run(results, PROMPTS)["overall"]
+    assert (overall["prompts"], overall["scored"], overall["llm_call_failed"]) == (3, 2, 1)
+    assert overall["invalid_outputs"] == 1 and overall["guard_failed"] == 1
+    assert overall["outcomes"]["invalid"] == 5  # only the guard_failed row's fields
+    assert overall["exact_match_pct"] == 50.0  # 1 of 2 scored, not 1 of 3
+    assert overall["valid_json_pct"] == 50.0
+    assert overall["correct_refusal_pct"] is None  # the only refuse prompt failed to call
+    assert overall["latency_p50_ms"] == 150.0  # failed call's latency left out
+
+
 def test_build_report_side_by_side():
     base = score_run(_results([GOOD_JSON, GOOD_JSON, "not json"]), PROMPTS)
     guard = score_run(_results([GOOD_JSON, GOOD_JSON.replace("2023", "null"), "{}"]), PROMPTS)
@@ -169,3 +185,5 @@ def test_build_report_side_by_side():
 
     assert "| Exact match (all 5 fields) % | 33.3 | 100 | +66.7 ✅ |" in md
     assert "| missing year | 1 | 0 | 100 | +100 ✅ |" in md
+    assert "| Unusable outputs (count) | 1 | 0 | -1 ✅ |" in md  # shown next to hallucination %
+    assert "- **baseline scored: 3/3** (0 failed calls left out of every metric)" in md

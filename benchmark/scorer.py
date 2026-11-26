@@ -136,6 +136,10 @@ def _percentile(values: list[float], q: int) -> float | None:
     return round(quantiles(values, n=100, method="inclusive")[q - 1], 1)
 
 
+def _call_failed(row: dict) -> bool:
+    return str(row.get("run_error") or "").startswith("llm_call_failed")
+
+
 def score_run(results: list[dict], prompts: list[dict]) -> dict:
     """Score one run (list of saved results) against the answer key."""
     answers = {p["id"]: p["answer"] for p in prompts}
@@ -143,9 +147,15 @@ def score_run(results: list[dict], prompts: list[dict]) -> dict:
     for r in results:
         parsed = parse_output(r.get("raw_output"))
         scored = score_prompt(parsed["data"], answers[r["id"]])
-        rows.append({**r, **parsed, **scored})
+        # parse_output's "error" would hide the runner's error (guard_failed,
+        # llm_call_failed), so keep that one as run_error.
+        rows.append({**r, "run_error": r.get("error"), **parsed, **scored})
 
-    def summarize(subset: list[dict]) -> dict:
+    def summarize(all_rows: list[dict]) -> dict:
+        # Failed calls (quota, network, not run) say nothing about the model or
+        # the guard, so they are left out of every quality metric. guard_failed
+        # is a real guard outcome and stays in.
+        subset = [row for row in all_rows if not _call_failed(row)]
         n = len(subset)
         outcomes = [o for row in subset for o in row["fields"].values()]
         # Fields whose answer is null, in outputs that could be parsed.
@@ -153,7 +163,8 @@ def score_run(results: list[dict], prompts: list[dict]) -> dict:
         refusals = [row for row in subset if row["refusal_correct"] is not None]
         latencies = [row["latency_ms"] for row in subset if row.get("latency_ms") is not None]
         return {
-            "prompts": n,
+            "prompts": len(all_rows),
+            "scored": n,
             "valid_json_pct": _pct(sum(row["valid_json"] for row in subset), n),
             "schema_valid_pct": _pct(sum(row["schema_valid"] for row in subset), n),
             "field_accuracy_pct": _pct(sum(o in GOOD for o in outcomes), len(outcomes)),
@@ -164,6 +175,11 @@ def score_run(results: list[dict], prompts: list[dict]) -> dict:
             "exact_match_pct": _pct(sum(row["exact_match"] for row in subset), n),
             "latency_p50_ms": _percentile(latencies, 50),
             "latency_p95_ms": _percentile(latencies, 95),
+            # Rows with no usable output: they are left out of hallucination_pct,
+            # so show how many there were and why.
+            "invalid_outputs": sum(row["data"] is None for row in subset),
+            "guard_failed": sum(row["run_error"] == "guard_failed" for row in subset),
+            "llm_call_failed": len(all_rows) - n,  # not scored
             "outcomes": {o: outcomes.count(o) for o in (CORRECT, CORRECT_NULL, WRONG, HALLUCINATED, MISSED, INVALID)},
         }
 

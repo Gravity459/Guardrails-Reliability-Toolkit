@@ -21,7 +21,6 @@ jobs:
 
       # No secrets needed:
       # - tests/conftest.py sets a dummy Gemini key; every Gemini call is mocked.
-      # - Guardrails Hub validators (ValidLength, ValidRange) need a hub token to
-      #   install, so conftest.py registers stand-ins when they are missing.
+      # - Guardrails validators are plain PyPI packages, installed by uv sync.
       - name: Run tests
         run: uv run pytest -q

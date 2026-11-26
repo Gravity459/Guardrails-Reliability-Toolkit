@@ -63,9 +63,17 @@ uv run python -m benchmark.report            # score both, write benchmark/repor
 - Scoring: model and camera must match the answer **exactly** (case-sensitive);
   storage/battery spacing and case are normalised ("256 GB" = "256GB"); year is an integer.
 - Responses are cached in `benchmark/cache/`, so reruns don't call Gemini.
-  Use `--refresh` to call again. Changing the system prompt invalidates the cache.
-- The guarded run needs the Guardrails Hub validators: `guardrails configure` (token),
-  then `guardrails hub install hub://guardrails/valid_length` and `hub://guardrails/valid_range`.
+  Use `--refresh` to call again. Changing the system prompt invalidates the cache;
+  for the guarded run, so does editing `app/guard.py` or `app/schemas/guarded_schema.py`.
+- Latency excludes rate-limit (429) waits; those are saved separately as `wait_ms`.
+- Failed calls (network, quota) are never cached and get one retry after the main pass.
+  If the daily quota runs out, the run stops and saves; rerun later and only the missing
+  prompts are called. Failed calls are left out of the scores (the report shows "scored: X/200");
+  `guard_failed` is a real guard result and stays in.
+- Guardrails validators (`guardrails-ai-valid-length`, `guardrails-ai-valid-range`) are
+  normal PyPI packages installed by `uv sync`. No `guardrails configure` or token needed.
+- Guarded validators use `on_fail="reask"`: a failing value is sent back to Gemini with the
+  error, once (max 2 calls per prompt). If it still fails, the result is `guard_failed`.
 
 ### Tests
 
