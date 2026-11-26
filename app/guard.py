@@ -14,6 +14,9 @@ logger = logging.getLogger(__name__)
 
 
 guard = Guard.for_pydantic(output_class=GuardedPhone)
+# Turn off Guardrails' usage telemetry (traces sent to Guardrails' servers).
+# Every guard call reads this flag, whatever ~/.guardrailsrc says.
+guard.configure(allow_metrics_collection=False)
 
 
 def _make_llm_api(prompt: str):

@@ -60,6 +60,33 @@ def test_still_bad_after_one_reask_is_rejected(bad):
     assert models.generate_content.call_count == 2  # num_reasks = 1
 
 
+TELEMETRY_CHECK = """
+import os, json
+from types import SimpleNamespace
+from unittest.mock import MagicMock, patch
+os.environ.setdefault("LLM_API_KEY", "test-dummy-key")
+os.environ["GUARDRAILS_RUN_SYNC"] = "true"
+from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
+from guardrails.utils.hub_telemetry_utils import HubTelemetry
+from app import llm_client
+from app import guard as g
+
+models = MagicMock()
+models.generate_content.return_value = SimpleNamespace(text=json.dumps({"model": "Pixel 8", "year": 2023}))
+with patch.object(llm_client, "client", SimpleNamespace(models=models)), \\
+        patch.object(OTLPSpanExporter, "export") as export:
+    g.guarded_call_llm("Source: Pixel 8 from 2023")
+    HubTelemetry()._processor.force_flush()
+print(g.guard._allow_metrics_collection, HubTelemetry()._enabled, export.call_count)
+"""
+
+
+def test_guard_telemetry_is_off_in_the_app():
+    # Runs without conftest's test-only telemetry patch, like a real benchmark run.
+    out = subprocess.run([sys.executable, "-c", TELEMETRY_CHECK], capture_output=True, text=True, check=True)
+    assert out.stdout.strip().splitlines()[-1] == "False False 0"  # flag off, tracer off, nothing exported
+
+
 def test_baseline_runner_never_loads_the_guard():
     code = "import sys, benchmark.baseline_runner; print('app.guard' in sys.modules)"
     out = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, check=True)

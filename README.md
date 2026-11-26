@@ -72,6 +72,7 @@ uv run python -m benchmark.report            # score both, write benchmark/repor
   `guard_failed` is a real guard result and stays in.
 - Guardrails validators (`guardrails-ai-valid-length`, `guardrails-ai-valid-range`) are
   normal PyPI packages installed by `uv sync`. No `guardrails configure` or token needed.
+- Guardrails usage telemetry is turned off in code (`app/guard.py`), so no traces leave your machine.
 - Guarded validators use `on_fail="reask"`: a failing value is sent back to Gemini with the
   error, once (max 2 calls per prompt). If it still fails, the result is `guard_failed`.
 
