@@ -54,10 +54,11 @@ def test_reask_sends_error_back_and_accepts_fixed_answer():
 )
 def test_still_bad_after_one_reask_is_rejected(bad):
     # Guardrails would swap in a made-up "fix" (e.g. year 2000); we reject instead.
-    models, client = _fake_client({**FULL, **bad}, {**FULL, **bad})
+    # Primary: answer + 1 reask. Then the fallback model gets the same 2 tries.
+    models, client = _fake_client(*[{**FULL, **bad}] * 4)
     with patch.object(llm_client, "client", client):
         assert guard_module.guarded_call_llm("Source: x") is None
-    assert models.generate_content.call_count == 2  # num_reasks = 1
+    assert models.generate_content.call_count == 4  # num_reasks = 1, on each model
 
 
 TELEMETRY_CHECK = """

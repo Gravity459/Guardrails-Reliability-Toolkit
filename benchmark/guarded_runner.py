@@ -22,7 +22,7 @@ ROOT = BENCHMARK_DIR.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app import guarded_call_llm  # noqa: E402
+from app.guard import guarded_call  # noqa: E402
 from benchmark.run_utils import TEMPERATURE, files_hash, run_benchmark  # noqa: E402
 
 RESULTS_PATH = BENCHMARK_DIR / "results_guarded.json"
@@ -35,10 +35,11 @@ GUARD_VERSION = files_hash(*GUARD_FILES)
 
 def call(prompt: str) -> dict:
     # API errors (e.g. quota) raise and are recorded as llm_call_failed by run_utils.
-    validated = guarded_call_llm(prompt, temperature=TEMPERATURE)
-    if validated is None:
-        return {"raw_output": None, "error": "guard_failed"}
-    return {"raw_output": json.dumps(validated, ensure_ascii=False), "error": None}
+    result = guarded_call(prompt, temperature=TEMPERATURE)
+    used = {"model_used": result["model_used"], "fallback_reason": result["fallback_reason"]}
+    if result["output"] is None:
+        return {"raw_output": None, "error": "guard_failed", **used}
+    return {"raw_output": json.dumps(result["output"], ensure_ascii=False), "error": None, **used}
 
 
 def main(argv: list[str] | None = None) -> None:

@@ -20,7 +20,7 @@ ROOT = BENCHMARK_DIR.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from app import call_llm  # noqa: E402
+from app.llm_client import call_with_fallback  # noqa: E402
 from app.prompts import build_messages  # noqa: E402
 from benchmark.run_utils import TEMPERATURE, run_benchmark  # noqa: E402
 
@@ -29,8 +29,13 @@ MODEL = os.getenv("LLM_PRIMARY_MODEL")
 
 
 def call(prompt: str) -> dict:
-    raw = call_llm(build_messages(prompt), MODEL, temperature=TEMPERATURE)
-    return {"raw_output": raw, "error": None}
+    result = call_with_fallback(build_messages(prompt), MODEL, temperature=TEMPERATURE)
+    return {
+        "raw_output": result["text"],
+        "error": None,
+        "model_used": result["model_used"],
+        "fallback_reason": result["fallback_reason"],
+    }
 
 
 def main(argv: list[str] | None = None) -> None:

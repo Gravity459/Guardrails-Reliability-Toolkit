@@ -4,6 +4,7 @@ import os
 import re
 import time
 
+import httpx
 from dotenv import load_dotenv
 from google import genai
 from google.genai import errors as genai_errors
@@ -200,3 +201,75 @@ def call_llm(
     raise genai_errors.ClientError(
         429, {"message": "retries exhausted", "status": "RESOURCE_EXHAUSTED"}
     )
+
+
+# --- Fallback model ------------------------------------------------------------
+# When the primary model can't answer (server error, timeout, daily quota), ask
+# the fallback model instead. Per-minute 429s are not a reason: call_llm already
+# waits those out. Fallback calls are capped per benchmark run.
+
+FALLBACK_MODEL = "gemini-3.8-flash"
+FALLBACK_BUDGET = 20  # max fallback-model calls per benchmark run
+
+
+class FallbackBudgetExhausted(RuntimeError):
+    """Raised when a fallback call is needed but the run's budget is used up."""
+
+
+class FallbackBudget:
+    def __init__(self, limit: int):
+        self.limit = limit
+        self.used = 0
+
+    def reset(self) -> None:
+        self.used = 0
+
+    def remaining(self) -> int:
+        return self.limit - self.used
+
+    def take(self) -> bool:
+        """Use one fallback call. False if the budget is used up."""
+        if self.used >= self.limit:
+            return False
+        self.used += 1
+        return True
+
+
+fallback_budget = FallbackBudget(FALLBACK_BUDGET)
+
+
+def fallback_reason(err: BaseException) -> str | None:
+    """Why this primary-model error should switch to the fallback (None = don't)."""
+    if isinstance(err, genai_errors.ServerError):  # 5xx, e.g. 503 "high demand"
+        return "server_error"
+    if isinstance(err, (httpx.TimeoutException, TimeoutError)):
+        return "timeout"
+    if (
+        isinstance(err, genai_errors.ClientError)
+        and err.code == 429
+        and is_daily_quota_error(err)
+    ):
+        return "daily_quota"
+    return None
+
+
+def call_with_fallback(
+    messages: list[dict],
+    model: str | None = os.getenv("LLM_PRIMARY_MODEL"),
+    temperature: float | None = None,
+) -> dict:
+    """Call the primary model; on server error / timeout / daily quota, call the fallback.
+
+    Returns {"text", "model_used", "fallback_reason"}. If the error is not a
+    fallback reason, or the budget is used up, the primary error is raised.
+    """
+    try:
+        text = call_llm(messages, model, temperature=temperature)
+        return {"text": text, "model_used": model, "fallback_reason": None}
+    except Exception as e:
+        reason = fallback_reason(e)
+        if reason is None or not fallback_budget.take():
+            raise
+    print(f"Fallback to {FALLBACK_MODEL} ({reason})", flush=True)
+    text = call_llm(messages, FALLBACK_MODEL, temperature=temperature)
+    return {"text": text, "model_used": FALLBACK_MODEL, "fallback_reason": reason}

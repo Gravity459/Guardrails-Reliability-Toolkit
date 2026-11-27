@@ -1,6 +1,6 @@
 """Score model outputs against the hand-written answer key in prompts.json.
 
-Matching rules (decided by Talha):
+Matching rules:
 - model, camera: exact text. Only outer whitespace is trimmed; case-sensitive.
 - storage: "256 GB" / "256gb" -> "256GB", "1 tb" -> "1TB", then exact.
 - battery: "5,000 mAh" -> "5000mAh", then exact.

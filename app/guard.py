@@ -1,7 +1,8 @@
 from guardrails import Guard
 from guardrails.errors import ValidationError
 
-from app import call_llm
+from app import call_llm, llm_client
+from app.llm_client import FALLBACK_MODEL, FallbackBudgetExhausted, call_with_fallback
 from app.prompts import SYSTEM_PROMPT, build_messages
 from app.schemas.guarded_schema import GuardedPhone
 import logging
@@ -19,7 +20,7 @@ guard = Guard.for_pydantic(output_class=GuardedPhone)
 guard.configure(allow_metrics_collection=False)
 
 
-def _make_llm_api(prompt: str):
+def _make_llm_api(prompt: str, info: dict, fallback_only: bool = False):
     """Build the function Guardrails calls (it passes `messages` keyword-only).
 
     The first call gets our own messages. On a reask, Guardrails sends its own
@@ -28,6 +29,11 @@ def _make_llm_api(prompt: str):
     original request in front of Guardrails' reask message.
     (Guardrails' `reask_messages` option can't do this: it doesn't fill in
     ${previous_response} / ${error_messages}.)
+
+    Normal mode: primary model, switching to the fallback model on server
+    errors / timeouts / daily quota. fallback_only: every call goes to the
+    fallback model (used after a failed reask). `info` records which model
+    answered and why the fallback was used.
     """
 
     def llm_api(*, messages: list[dict], **kwargs) -> str:
@@ -35,15 +41,42 @@ def _make_llm_api(prompt: str):
         if is_reask:
             reask = "\n\n".join(m["content"] for m in messages if m["role"] == "user")
             messages = build_messages(f"Original request:\n{prompt}\n\n{reask}")
-        return call_llm(messages, **kwargs)
+        temperature = kwargs.get("temperature")
+        if fallback_only:
+            if not llm_client.fallback_budget.take():
+                raise FallbackBudgetExhausted("fallback budget used up")
+            return call_llm(messages, FALLBACK_MODEL, temperature=temperature)
+        result = call_with_fallback(messages, kwargs.get("model"), temperature=temperature)
+        if result["fallback_reason"]:
+            info.update(model_used=result["model_used"], fallback_reason=result["fallback_reason"])
+        return result["text"]
 
     return llm_api
 
 
+def guarded_call(prompt: str, temperature: float = 0) -> dict:
+    """Run the guard; if it still fails after the reask, run it once more on the fallback model.
+
+    Returns {"output": dict | None, "model_used", "fallback_reason"}.
+    output None = guard_failed.
+    """
+    info = {"model_used": os.getenv("LLM_PRIMARY_MODEL"), "fallback_reason": None}
+    output = _run_guard(prompt, temperature, _make_llm_api(prompt, info))
+    if output is None and llm_client.fallback_budget.remaining() > 0:
+        print(f"Guard failed; trying {FALLBACK_MODEL}", flush=True)
+        info = {"model_used": FALLBACK_MODEL, "fallback_reason": "guard_failed"}
+        output = _run_guard(prompt, temperature, _make_llm_api(prompt, info, fallback_only=True))
+    return {"output": output, **info}
+
+
 def guarded_call_llm(prompt: str, temperature: float = 0) -> GuardedPhone:
+    return guarded_call(prompt, temperature)["output"]
+
+
+def _run_guard(prompt: str, temperature: float, llm_api) -> dict | None:
     try:
         result = guard(
-            llm_api=_make_llm_api(prompt),
+            llm_api=llm_api,
             messages=build_messages(prompt),
             model=os.getenv("LLM_PRIMARY_MODEL"),
             temperature=temperature,

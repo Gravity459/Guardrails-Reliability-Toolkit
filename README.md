@@ -72,6 +72,11 @@ uv run python -m benchmark.report            # score both, write benchmark/repor
   `guard_failed` is a real guard result and stays in.
 - Guardrails validators (`guardrails-ai-valid-length`, `guardrails-ai-valid-range`) are
   normal PyPI packages installed by `uv sync`. No `guardrails configure` or token needed.
+- Fallback model (`gemini-3.8-flash`): used when the primary model has a server error (e.g. 503),
+  a timeout or a daily-quota error, and in the guarded run once more after a failed reask.
+  Per-minute 429s are waited out instead. Max 20 fallback calls per run; after that the row is
+  `llm_call_failed`. Rows record `model_used` / `fallback_reason`; fallback answers are cached in
+  `benchmark/cache/<strategy>_gemini-3.8-flash.json`; the report shows "fallback used: N".
 - Guardrails usage telemetry is turned off in code (`app/guard.py`), so no traces leave your machine.
 - Guarded validators use `on_fail="reask"`: a failing value is sent back to Gemini with the
   error, once (max 2 calls per prompt). If it still fails, the result is `guard_failed`.

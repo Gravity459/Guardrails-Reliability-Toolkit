@@ -29,3 +29,15 @@ def _disable_guardrails_telemetry() -> None:
 
 
 _disable_guardrails_telemetry()
+
+
+import pytest  # noqa: E402
+
+
+@pytest.fixture(autouse=True)
+def _fresh_fallback_budget():
+    """Each test starts with a full fallback budget (it is per run, i.e. global)."""
+    from app import llm_client
+
+    llm_client.fallback_budget.reset()
+    yield
