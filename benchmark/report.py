@@ -62,7 +62,8 @@ def build_report(scores: dict[str, dict], metas: dict[str, dict]) -> str:
             f"- **{name}**: model `{m.get('model')}`, temperature {m.get('temperature')}, "
             f"system prompt `{m.get('system_prompt_sha')}`, run {m.get('run_at')}, "
             f"{m.get('total')} prompts ({m.get('cached', 0)} from cache, "
-            f"{m.get('llm_call_failed', 0)} LLM call failures)"
+            f"{m.get('llm_call_failed', 0)} LLM call failures, "
+            f"fallback used: {m.get('fallback_used', 0)})"
         )
     for name, s in scores.items():
         o = s["overall"]

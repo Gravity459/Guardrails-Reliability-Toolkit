@@ -30,7 +30,7 @@ def test_baseline_call_sends_rules_prompt_and_temperature_zero():
     assert kwargs["contents"] == "Extract the phone"  # regression: prompt is sent as a message
     assert kwargs["config"].system_instruction == SYSTEM_PROMPT
     assert kwargs["config"].temperature == 0
-    assert out == {"raw_output": ALL_FIELDS, "error": None}
+    assert out == {"raw_output": ALL_FIELDS, "error": None, "model_used": "gemini-test", "fallback_reason": None}
 
 
 def test_guarded_call_saves_validated_json_with_temperature_zero():
@@ -44,8 +44,11 @@ def test_guarded_call_saves_validated_json_with_temperature_zero():
 
 
 def test_guarded_call_records_guard_failure():
-    with patch.object(guarded_runner, "guarded_call_llm", return_value=None):
-        assert guarded_runner.call("x") == {"raw_output": None, "error": "guard_failed"}
+    failed = {"output": None, "model_used": "gemini-3.8-flash", "fallback_reason": "guard_failed"}
+    with patch.object(guarded_runner, "guarded_call", return_value=failed):
+        assert guarded_runner.call("x") == {
+            "raw_output": None, "error": "guard_failed", "model_used": "gemini-3.8-flash", "fallback_reason": "guard_failed"
+        }
 
 
 def test_run_benchmark_saves_raw_results_and_reuses_cache(tmp_path):
@@ -61,7 +64,8 @@ def test_run_benchmark_saves_raw_results_and_reuses_cache(tmp_path):
     saved = json.loads(results_path.read_text(encoding="utf-8"))
     assert saved["meta"]["temperature"] == 0
     assert set(saved["results"][0]) == {
-        "id", "expected_failure", "model", "raw_output", "latency_ms", "wait_ms", "error", "cached"
+        "id", "expected_failure", "model", "raw_output", "latency_ms", "wait_ms", "error", "cached",
+        "model_used", "fallback_reason",
     }
     assert "passed" not in saved["results"][0]  # runners don't grade
 

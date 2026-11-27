@@ -9,6 +9,11 @@ The guarded runner passes a hash of its guard code as cache_salt, so changing a
 validator or the reask logic also changes every guarded key.
 LLM call failures (e.g. quota) are never cached.
 
+Fallback: if the primary model has a server error, timeout or daily quota (or
+the guard still fails after its reask), the fallback model answers instead,
+up to FALLBACK_BUDGET calls per run. Its answers go to its own cache file
+(<strategy>_<fallback model>.json); rows record model_used and fallback_reason.
+
 Failed calls: every prompt whose call failed gets one retry after the main
 pass. If the daily quota runs out, the run stops at once, the rest are saved
 as not_run, and a rerun skips everything already cached.
@@ -105,6 +110,8 @@ def _not_run(entry: dict, model: str | None) -> dict:
         "wait_ms": 0.0,
         "error": f"{LLM_CALL_FAILED}: {NOT_RUN} ({DAILY_QUOTA})",
         "cached": False,
+        "model_used": None,
+        "fallback_reason": None,
     }
 
 
@@ -115,10 +122,18 @@ def run_one(
     cache: dict,
     refresh: bool = False,
     cache_salt: str = "",
+    fallback_cache: dict | None = None,
 ) -> dict:
-    """Run one prompt. `call(prompt)` returns {"raw_output": str|None, "error": str|None}."""
+    """Run one prompt.
+
+    `call(prompt)` returns {"raw_output", "error"} and optionally
+    {"model_used", "fallback_reason"}. Answers are cached in the cache of the
+    model that actually answered: `cache` (primary) or `fallback_cache`.
+    """
     key = cache_key(entry["prompt"], salt=cache_salt)
-    hit = None if refresh else cache.get(key)
+    hit = None
+    if not refresh:
+        hit = cache.get(key) or (fallback_cache or {}).get(key)
     if hit is not None:
         response, cached = hit, True
         latency_ms, wait_ms = hit["latency_ms"], hit.get("wait_ms", 0.0)
@@ -135,7 +150,9 @@ def run_one(
         latency_ms = round(max(total_ms - wait_ms, 0.0), 1)
         cached = False
         if not str(response.get("error") or "").startswith(LLM_CALL_FAILED):
-            cache[key] = {**response, "latency_ms": latency_ms, "wait_ms": wait_ms}
+            answered_by_fallback = response.get("model_used") not in (None, model)
+            target = fallback_cache if answered_by_fallback and fallback_cache is not None else cache
+            target[key] = {**response, "latency_ms": latency_ms, "wait_ms": wait_ms}
 
     return {
         "id": entry["id"],
@@ -146,6 +163,8 @@ def run_one(
         "wait_ms": wait_ms,
         "error": response.get("error"),
         "cached": cached,
+        "model_used": response.get("model_used", model),
+        "fallback_reason": response.get("fallback_reason"),
     }
 
 
@@ -163,6 +182,9 @@ def run_benchmark(
     prompts = prompts if prompts is not None else load_prompts()
     cpath = cache_path(strategy, model, cache_dir)
     cache = _read_json(cpath)
+    fpath = cache_path(strategy, llm_client.FALLBACK_MODEL, cache_dir)
+    fallback_cache = _read_json(fpath)
+    llm_client.fallback_budget.reset()  # fallback budget is per run
 
     total = len(prompts)
     results: list[dict | None] = [None] * total
@@ -170,13 +192,16 @@ def run_benchmark(
 
     def attempt(i: int, label: str) -> None:
         nonlocal quota_hit
-        result = run_one(prompts[i], call, model, cache, refresh, cache_salt)
+        result = run_one(prompts[i], call, model, cache, refresh, cache_salt, fallback_cache)
         tag = "cache" if result["cached"] else f"{result['latency_ms']:.0f}ms"
         status = "ERROR" if result["error"] else "ok"
-        print(f"{label} {prompts[i]['id']} {status} ({tag})", flush=True)
+        via = f" via {result['model_used']}" if result["fallback_reason"] else ""
+        print(f"{label} {prompts[i]['id']} {status} ({tag}){via}", flush=True)
         results[i] = result
         if not result["cached"]:
             _write_json(cpath, cache)  # save as we go, so a crash keeps progress
+            if fallback_cache:
+                _write_json(fpath, fallback_cache)
         quota_hit = DAILY_QUOTA in str(result["error"] or "")
 
     # Main pass.
@@ -217,6 +242,9 @@ def run_benchmark(
             "retried": sum(r.get("retried", False) for r in results),
             "not_run": sum(NOT_RUN in str(r["error"]) for r in results),
             "stopped_on_daily_quota": quota_hit,
+            "fallback_model": llm_client.FALLBACK_MODEL,
+            "fallback_used": sum(r["fallback_reason"] is not None for r in results),
+            "fallback_calls": llm_client.fallback_budget.used,
             "wait_ms_total": round(sum(r["wait_ms"] for r in results if not r["cached"]), 1),
         },
         "results": results,
